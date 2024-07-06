@@ -16,14 +16,14 @@ export function Home() {
   const textColor = useColorModeValue("gray.700", "gray.200");
 
   return (
-    <Box bg={bgColor} py={10} px={4}>
-      <Container maxW="container.lg">
+    <Box bg={bgColor} py={10} px={{ base: 4, md: 10 }}>
+      <Container maxW="container.md">
         <VStack
           spacing={6}
           align="start"
           divider={<StackDivider borderColor="gray.200" />}
         >
-          <Heading as="h1" size="2xl" color={textColor} mb={4}>
+          <Heading as="h1" size="xl" color={textColor} mb={4}>
             DYS – Ihr Experte für Vorratsgesellschaften
           </Heading>
           <Text fontSize="lg" color={textColor}>

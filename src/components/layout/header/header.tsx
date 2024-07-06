@@ -1,4 +1,3 @@
-// Header.tsx
 import { useState } from "react";
 import {
   Box,
@@ -81,7 +80,7 @@ export function Header() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>
+            <Box display={{ base: "none", md: "block" }}>
               <Text fontSize="xl" fontWeight="bold">
                 DYS-GmbH
               </Text>

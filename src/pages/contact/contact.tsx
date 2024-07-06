@@ -19,7 +19,6 @@ interface FormData {
   lastName: string;
   kanzleiFirma: string;
   email: string;
-  birthDate: string;
   message: string;
 }
 
@@ -31,7 +30,6 @@ export function Contact() {
     lastName: "",
     kanzleiFirma: "",
     email: "",
-    birthDate: "",
     message: "",
   });
 
