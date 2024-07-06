@@ -123,7 +123,7 @@ export function Header() {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>Navigation</DrawerHeader>
+            <DrawerHeader>DYS-GmbH</DrawerHeader>
             <DrawerBody>
               <Stack as={"nav"} spacing={4}>
                 {Links.map((link) => (
