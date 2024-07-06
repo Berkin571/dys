@@ -8,9 +8,8 @@ import { Header } from "./components";
 function App() {
   return (
     <div className="app-container">
-      <Header />
-
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
