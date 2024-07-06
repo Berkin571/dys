@@ -62,10 +62,10 @@ export function Contact() {
 
     emailjs
       .send(
-        "service_3tbge1l",
-        "template_d7v1ulj",
+        process.env.EMAIL_SERVICE!,
+        process.env.EMAIL_TEMPLATE!,
         templateParams,
-        "G86NYDVPkB7LWK79U"
+        process.env.EMAIL_USERID
       )
       .then(
         (response) => {
