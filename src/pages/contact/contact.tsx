@@ -55,7 +55,6 @@ export function Contact() {
       lastName: formData.lastName,
       kanzleiFirma: formData.kanzleiFirma,
       email: formData.email,
-      birthDate: formData.birthDate,
       message: formData.message,
       reply_to: formData.email,
     };
@@ -154,18 +153,6 @@ export function Contact() {
             onChange={handleChange}
             required
             placeholder="E-Mail Adresse*"
-          />
-        </FormControl>
-        <FormControl
-          id="birthDate"
-          gridColumn={{ base: "span 1", md: "span 2" }}
-        >
-          <FormLabel>Geburtsdatum</FormLabel>
-          <Input
-            type="date"
-            name="birthDate"
-            value={formData.birthDate}
-            onChange={handleChange}
           />
         </FormControl>
         <FormControl id="message" gridColumn={{ base: "span 1", md: "span 2" }}>
