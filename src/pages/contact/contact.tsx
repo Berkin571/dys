@@ -10,6 +10,7 @@ import {
   Textarea,
   SimpleGrid,
 } from "@chakra-ui/react";
+import OfficePicture from "../../assets/office.jpg";
 
 interface FormData {
   [key: string]: string;
@@ -59,10 +60,10 @@ export function Contact() {
 
     emailjs
       .send(
-        process.env.EMAIL_SERVICE!,
-        process.env.EMAIL_TEMPLATE!,
+        import.meta.env.VITE_EMAIL_SERVICE!,
+        import.meta.env.VITE_EMAIL_TEMPLATE!,
         templateParams,
-        process.env.EMAIL_USERID
+        import.meta.env.VITE_EMAIL_USERID!
       )
       .then(
         (response) => {
@@ -79,19 +80,19 @@ export function Contact() {
   };
 
   return (
-    <>
-      <br />
-      <br />
-
+    <Box
+      maxW={{ base: "full", md: "container.md" }}
+      mx="auto"
+      borderRadius="md"
+    >
+      <img src={OfficePicture} style={{ borderRadius: 5 }} />
       <Box
         as="form"
         onSubmit={handleSubmit}
         maxW={{ base: "full", md: "container.md" }}
         mx="auto"
-        p="4"
-        borderWidth="1px"
         borderRadius="md"
-        boxShadow="md"
+        p={5}
       >
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
           <FormControl id="anrede">
@@ -177,6 +178,6 @@ export function Contact() {
           Absenden
         </Button>
       </Box>
-    </>
+    </Box>
   );
 }

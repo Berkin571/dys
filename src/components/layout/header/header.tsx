@@ -17,9 +17,10 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { useNavigate } from "react-router-dom";
+import "./header.css";
 
 const Links = [
-  { name: "Home", url: "/" },
   { name: "Über DYS", url: "/about" },
   { name: "Voratsgesellschaften", url: "/shelf-companies" },
   { name: "Ablauf", url: "/process" },
@@ -48,6 +49,8 @@ const NavLink = ({ children, url }: NavLinkType) => (
 );
 
 export function Header() {
+  const navigate = useNavigate();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [scroll, setScroll] = useState(false);
 
@@ -60,6 +63,11 @@ export function Header() {
   };
 
   window.addEventListener("scroll", handleScroll);
+
+  const handleLogoClick = () => {
+    navigate("/");
+    onClose();
+  };
 
   return (
     <>
@@ -122,8 +130,8 @@ export function Header() {
         >
           <DrawerOverlay />
           <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader>DYS-GmbH</DrawerHeader>
+            <DrawerHeader onClick={handleLogoClick}>DYS-GmbH</DrawerHeader>
+            <DrawerCloseButton sx={{ marginTop: 2, marginRight: 2 }} />
             <DrawerBody>
               <Stack as={"nav"} spacing={4}>
                 {Links.map((link) => (
