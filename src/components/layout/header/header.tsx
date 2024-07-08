@@ -21,7 +21,7 @@ import { useNavigate } from "react-router-dom";
 import "./header.css";
 
 const Links = [
-  { name: "Über DYS", url: "/about" },
+  { name: "Über DYS", url: "/about-us" },
   { name: "Voratsgesellschaften", url: "/shelf-companies" },
   { name: "Ablauf", url: "/process" },
   { name: "FAQ", url: "/faq" },

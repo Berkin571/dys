@@ -1,0 +1,60 @@
+.image-container {
+    width: 100%;
+    overflow: hidden;
+  
+    .full-width-image {
+      width: 100%;
+      height: auto;
+      max-height: 300px; // Die maximale Höhe des Bildes
+      object-fit: cover; // Das Bild wird skaliert und beschnitten, um den gesamten Container zu füllen
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+  
+    @media (max-width: 768px) { // Max-Breite für Tablets und kleinere Geräte
+      .full-width-image {
+        max-height: 165px; // Die maximale Höhe des Bildes für Mobil- und Tablet-Geräte
+      }
+    }
+  }
+  
+  .about-us {
+    background-color: #f7fafc; // Light background color for light mode
+    color: #2d3748; // Dark text color for light mode
+  
+    @media (prefers-color-scheme: dark) {
+      background-color: #1a202c; // Dark background color for dark mode
+      color: #e2e8f0; // Light text color for dark mode
+    }
+  
+    .chakra-heading {
+      margin-bottom: 1rem;
+    }
+  
+    .chakra-text {
+      margin-bottom: 1rem;
+    }
+  
+    .chakra-stack {
+      margin-top: 2rem;
+    }
+  
+    .chakra-icon {
+      margin-right: 0.5rem;
+    }
+  
+    .h-stack {
+      display: flex;
+      align-items: center;
+  
+      p {
+        margin-bottom: 0 !important;
+      }
+    }
+  
+    h2 {
+      border-left: 4px solid #319795; // Akzentlinie links von den Überschriften
+      padding-left: 0.5rem;
+    }
+  }
+  
