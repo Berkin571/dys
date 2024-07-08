@@ -5,15 +5,15 @@
     .full-width-image {
       width: 100%;
       height: auto;
-      max-height: 300px; // Die maximale Höhe des Bildes
-      object-fit: cover; // Das Bild wird skaliert und beschnitten, um den gesamten Container zu füllen
+      max-height: 300px;
+      object-fit: cover;
       border-bottom-left-radius: 1rem;
       border-bottom-right-radius: 1rem;
     }
   
-    @media (max-width: 768px) { // Max-Breite für Tablets und kleinere Geräte
+    @media (max-width: 768px) {
       .full-width-image {
-        max-height: 165px; // Die maximale Höhe des Bildes für Mobil- und Tablet-Geräte
+        max-height: 165px;
       }
     }
   }
@@ -53,7 +53,7 @@
     }
   
     h2 {
-      border-left: 4px solid #319795; // Akzentlinie links von den Überschriften
+      border-left: 4px solid #319795;
       padding-left: 0.5rem;
     }
   }
