@@ -14,7 +14,7 @@ import image from "../../assets/aboutus.jpg";
 export function AboutUs() {
   const bg = useColorModeValue("gray.50", "gray.800");
   const color = useColorModeValue("gray.700", "gray.200");
-  const accentColor = useColorModeValue("teal.500", "teal.200");
+  const accentColor = useColorModeValue("brand.500", "brand.500");
 
   return (
     <>
@@ -31,7 +31,7 @@ export function AboutUs() {
       >
         <VStack spacing={8} align="stretch">
           <Heading as="h1" size="2xl" textAlign="center">
-            Über uns
+            DYS – Ihr Experte für Vorratsgesellschaften
           </Heading>
 
           <Text fontSize="lg" textAlign="center">
@@ -76,7 +76,7 @@ export function AboutUs() {
             </Heading>
             <VStack align="start">
               <HStack className="h-stack">
-                <Icon as={CheckCircleIcon} color="green.500" />
+                <Icon as={CheckCircleIcon} color="brand.500" />
                 <Text>
                   <strong>Schnelligkeit:</strong> Mit unseren
                   Vorratsgesellschaften können Sie innerhalb weniger Stunden
@@ -84,7 +84,7 @@ export function AboutUs() {
                 </Text>
               </HStack>
               <HStack className="h-stack">
-                <Icon as={CheckCircleIcon} color="green.500" />
+                <Icon as={CheckCircleIcon} color="brand.500" />
                 <Text>
                   <strong>Sicherheit:</strong> Alle unsere Gesellschaften sind
                   frei von Verbindlichkeiten und haben keine Geschäftstätigkeit
@@ -92,7 +92,7 @@ export function AboutUs() {
                 </Text>
               </HStack>
               <HStack className="h-stack">
-                <Icon as={CheckCircleIcon} color="green.500" />
+                <Icon as={CheckCircleIcon} color="brand.500" />
                 <Text>
                   <strong>Erfahrung:</strong> Profitieren Sie von unserer
                   langjährigen Erfahrung und unserem umfassenden Wissen im
@@ -100,7 +100,7 @@ export function AboutUs() {
                 </Text>
               </HStack>
               <HStack className="h-stack">
-                <Icon as={CheckCircleIcon} color="green.500" />
+                <Icon as={CheckCircleIcon} color="brand.500" />
                 <Text>
                   <strong>Kundensupport:</strong> Unser freundliches und
                   kompetentes Team steht Ihnen bei jedem Schritt zur Seite und
@@ -109,7 +109,7 @@ export function AboutUs() {
               </HStack>
             </VStack>
           </Box>
-
+          <br />
           <Box>
             <Heading as="h2" size="lg" mb={4} color={accentColor}>
               Unsere Mission

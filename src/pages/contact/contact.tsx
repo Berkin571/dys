@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   FormControl,
-  FormLabel,
   Input,
   Select,
   Textarea,
@@ -111,9 +110,9 @@ export function Contact() {
         <Box as="form" onSubmit={handleSubmit}>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
             <FormControl id="anrede">
-              <FormLabel>Anrede</FormLabel>
               <Select
                 name="anrede"
+                placeholder="Anrede"
                 value={formData.anrede}
                 onChange={handleChange}
               >
@@ -124,7 +123,6 @@ export function Contact() {
               </Select>
             </FormControl>
             <FormControl id="titel">
-              <FormLabel>Titel</FormLabel>
               <Input
                 placeholder="Titel"
                 type="text"
@@ -134,7 +132,6 @@ export function Contact() {
               />
             </FormControl>
             <FormControl id="firstName">
-              <FormLabel>Vorname</FormLabel>
               <Input
                 placeholder="Vorname"
                 type="text"
@@ -144,7 +141,6 @@ export function Contact() {
               />
             </FormControl>
             <FormControl id="lastName">
-              <FormLabel>Nachname</FormLabel>
               <Input
                 placeholder="Nachname"
                 type="text"
@@ -157,7 +153,6 @@ export function Contact() {
               id="kanzleiFirma"
               gridColumn={{ base: "span 1", md: "span 2" }}
             >
-              <FormLabel>Kanzlei / Firma</FormLabel>
               <Input
                 placeholder="Kanzlei / Firma"
                 type="text"
@@ -170,25 +165,25 @@ export function Contact() {
               id="email"
               gridColumn={{ base: "span 1", md: "span 2" }}
             >
-              <FormLabel>E-Mail Adresse*</FormLabel>
               <Input
+                placeholder="E-Mail Adresse*"
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="E-Mail Adresse*"
               />
             </FormControl>
             <FormControl
               id="message"
               gridColumn={{ base: "span 1", md: "span 2" }}
             >
-              <FormLabel>Nachricht</FormLabel>
               <Textarea
+                placeholder="Ihre Nachricht*"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
+                required
               />
             </FormControl>
           </SimpleGrid>
@@ -197,6 +192,7 @@ export function Contact() {
           </Button>
         </Box>
       </Box>
+      <br />
     </>
   );
 }

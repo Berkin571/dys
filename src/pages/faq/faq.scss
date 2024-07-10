@@ -1,0 +1,45 @@
+.faq {
+  margin-top: 1rem;
+  background-color: #f7fafc;
+  color: #2d3748;
+  border-radius: 5px;
+  box-shadow: var(--chakra-shadows-lg);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #1a202c;
+    color: #e2e8f0;
+  }
+
+  .chakra-accordion__item {
+    border-bottom: 1px solid #0e7490;
+  }
+
+  .chakra-accordion__button {
+    padding: 1rem;
+    font-weight: bold;
+    background-color: inherit;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #0e7490;
+      color: white;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        background-color: #083f50;
+      }
+    }
+  }
+
+  .chakra-accordion__panel {
+    padding: 1rem;
+    border-left: 4px solid #0e7490;
+    background-color: inherit;
+    margin: 0.25rem 0 0;
+
+    @media (prefers-color-scheme: dark) {
+      border-left-color: #083f50;
+    }
+  }
+}
