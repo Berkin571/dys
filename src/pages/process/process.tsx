@@ -20,9 +20,10 @@ import {
   ExternalLinkIcon,
   InfoIcon,
   PhoneIcon,
-  StarIcon,
-  AttachmentIcon,
 } from "@chakra-ui/icons";
+
+import { RiServiceFill } from "react-icons/ri";
+import { TbFlagStar } from "react-icons/tb";
 
 import image from "../../assets/process.jpg";
 
@@ -72,7 +73,12 @@ export function Process() {
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
                     <HStack>
-                      <Icon as={InfoIcon} color={accentColor} boxSize={6} />
+                      <Icon
+                        as={InfoIcon}
+                        color={accentColor}
+                        boxSize={6}
+                        marginRight={1.5}
+                      />
                       <Text as="span">1. Auswahl der Gesellschaft</Text>
                     </HStack>
                   </Box>
@@ -96,7 +102,12 @@ export function Process() {
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
                     <HStack>
-                      <Icon as={PhoneIcon} color={accentColor} boxSize={6} />
+                      <Icon
+                        as={PhoneIcon}
+                        color={accentColor}
+                        boxSize={6}
+                        marginRight={1.5}
+                      />
                       <Text as="span">2. Kontaktaufnahme und Beratung</Text>
                     </HStack>
                   </Box>
@@ -119,7 +130,12 @@ export function Process() {
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
                     <HStack>
-                      <Icon as={EditIcon} color={accentColor} boxSize={6} />
+                      <Icon
+                        as={EditIcon}
+                        color={accentColor}
+                        boxSize={6}
+                        marginRight={1.5}
+                      />
                       <Text as="span">
                         3. Vertragserstellung und Unterzeichnung
                       </Text>
@@ -145,7 +161,12 @@ export function Process() {
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
                     <HStack>
-                      <Icon as={CalendarIcon} color={accentColor} boxSize={6} />
+                      <Icon
+                        as={CalendarIcon}
+                        color={accentColor}
+                        boxSize={6}
+                        marginRight={1.5}
+                      />
                       <Text as="span">4. Notartermin und Umschreibung</Text>
                     </HStack>
                   </Box>
@@ -173,6 +194,7 @@ export function Process() {
                         as={ExternalLinkIcon}
                         color={accentColor}
                         boxSize={6}
+                        marginRight={1.5}
                       />
                       <Text as="span">5. Handelsregistereintragung</Text>
                     </HStack>
@@ -196,7 +218,12 @@ export function Process() {
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
                     <HStack>
-                      <Icon as={StarIcon} color={accentColor} boxSize={6} />
+                      <Icon
+                        as={TbFlagStar}
+                        color={accentColor}
+                        boxSize={6}
+                        marginRight={1.5}
+                      />
                       <Text as="span">6. Geschäftsbeginn</Text>
                     </HStack>
                   </Box>
@@ -220,11 +247,12 @@ export function Process() {
                   <Box flex="1" textAlign="left">
                     <HStack>
                       <Icon
-                        as={AttachmentIcon}
+                        as={RiServiceFill}
                         color={accentColor}
                         boxSize={6}
+                        marginRight={1.5}
                       />
-                      <Text as="span">Unser Service</Text>
+                      <Text as="span">7. Unser Service</Text>
                     </HStack>
                   </Box>
                   <AccordionIcon />
