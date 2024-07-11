@@ -3,8 +3,10 @@ import "./App.css";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import { Contact, FAQ, Process } from "./pages";
-import { Header } from "./components";
+import { Footer, Header } from "./components";
 import { AboutUs } from "./pages/about-us/about-us";
+
+import "./i18n/i18n";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/ablauf" element={<Process />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

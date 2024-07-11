@@ -30,7 +30,7 @@ export function AboutUs() {
         boxShadow="lg"
       >
         <VStack spacing={8} align="stretch">
-          <Heading as="h1" size="2xl" textAlign="center">
+          <Heading as="h1" size="xl" textAlign="center">
             DYS – Ihr Experte für Vorratsgesellschaften
           </Heading>
 
@@ -109,7 +109,7 @@ export function AboutUs() {
               </HStack>
             </VStack>
           </Box>
-          <br />
+
           <Box>
             <Heading as="h2" size="lg" mb={4} color={accentColor}>
               Unsere Mission

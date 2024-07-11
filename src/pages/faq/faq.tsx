@@ -22,8 +22,8 @@ export function FAQ() {
 
   return (
     <>
-      <Box>
-        <img src={faqImage} alt={"FAQ"} />
+      <Box className="image-container">
+        <img src={faqImage} alt="FAQ" className="full-width-image" />
       </Box>
       <Box
         className="faq"
