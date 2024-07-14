@@ -22,7 +22,7 @@ import "./header.css";
 
 const Links = [
   { name: "Über DYS", url: "/about-us" },
-  { name: "Voratsgesellschaften", url: "/shelf-companies" },
+  { name: "Voratsgesellschaften", url: "/vortragsgesellschaften" },
   { name: "Ablauf", url: "/ablauf" },
   { name: "FAQ", url: "/faq" },
   { name: "Kontakt", url: "/contact" },
