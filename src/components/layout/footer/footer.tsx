@@ -33,7 +33,7 @@ export function Footer() {
           className="link-container"
         >
           <Link href="/about-us">DYS</Link>
-          <Link href="/shelf-companies">Voratsgesellschaften</Link>
+          <Link href="/voratsgesellschaften">Voratsgesellschaften</Link>
           <Link href="/ablauf">Ablauf</Link>
           <Link href="/faq">FAQ</Link>
           <Link href="/contact">Kontakt</Link>
