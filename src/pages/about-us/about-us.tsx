@@ -31,14 +31,15 @@ export function AboutUs() {
       >
         <VStack spacing={8} align="stretch">
           <Heading as="h1" size="xl" textAlign="center">
-            DYS – Ihr Experte für Vorratsgesellschaften
+            CorpFactory – Ihr Experte für Vorratsgesellschaften
           </Heading>
 
           <Text fontSize="lg" textAlign="center">
-            Willkommen bei DYS, Ihrem vertrauenswürdigen Partner für den Erwerb
-            von Vorratsgesellschaften. Seit 2024 sind wir spezialisiert auf den
-            Vertrieb vorgegründeter Gesellschaften, die Ihnen einen schnellen
-            und unkomplizierten Einstieg in die Geschäftswelt ermöglichen.
+            Willkommen bei CorpFactory, Ihrem vertrauenswürdigen Partner für den
+            Erwerb von Vorratsgesellschaften. Seit 2024 sind wir spezialisiert
+            auf den Vertrieb vorgegründeter Gesellschaften, die Ihnen einen
+            schnellen und unkomplizierten Einstieg in die Geschäftswelt
+            ermöglichen.
           </Text>
 
           <Box>
@@ -46,7 +47,7 @@ export function AboutUs() {
               Wer wir sind
             </Heading>
             <Text>
-              Bei DYS steht Kundenzufriedenheit an erster Stelle. Unser
+              Bei CorpFactory steht Kundenzufriedenheit an erster Stelle. Unser
               erfahrenes Team besteht aus Experten im Bereich
               Unternehmensgründung und -verwaltung. Mit unserem umfassenden
               Know-how und unserem Engagement für Qualität unterstützen wir

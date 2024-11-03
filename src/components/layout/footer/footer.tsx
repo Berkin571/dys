@@ -32,7 +32,7 @@ export function Footer() {
           spacing={6}
           className="link-container"
         >
-          <Link href="/about-us">DYS</Link>
+          <Link href="/about-us">CorpFactory</Link>
           <Link href="/voratsgesellschaften">Voratsgesellschaften</Link>
           <Link href="/ablauf">Ablauf</Link>
           <Link href="/faq">FAQ</Link>
@@ -54,7 +54,7 @@ export function Footer() {
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
-          <Text>© 2024 DYS. Alle Rechte vorbehalten.</Text>
+          <Text>© 2024 CorpFactory. Alle Rechte vorbehalten.</Text>
           <Stack direction="row" spacing={6}>
             <IconButton
               as="a"

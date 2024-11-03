@@ -21,7 +21,7 @@ import { useNavigate } from "react-router-dom";
 import "./header.css";
 
 const Links = [
-  { name: "Über DYS", url: "/about-us" },
+  { name: "Über CorpFactory", url: "/about-us" },
   { name: "Voratsgesellschaften", url: "/vortragsgesellschaften" },
   { name: "Ablauf", url: "/ablauf" },
   { name: "FAQ", url: "/faq" },
@@ -90,7 +90,7 @@ export function Header() {
           <HStack spacing={8} alignItems={"center"}>
             <Box display={{ base: "none", md: "block" }}>
               <Text fontSize="xl" fontWeight="bold">
-                DYS-GmbH
+                CorpFactory
               </Text>
             </Box>
             <HStack
@@ -130,7 +130,7 @@ export function Header() {
         >
           <DrawerOverlay />
           <DrawerContent>
-            <DrawerHeader onClick={handleLogoClick}>DYS-GmbH</DrawerHeader>
+            <DrawerHeader onClick={handleLogoClick}>CorpFactory</DrawerHeader>
             <DrawerCloseButton sx={{ marginTop: 2, marginRight: 2 }} />
             <DrawerBody>
               <Stack as={"nav"} spacing={4}>

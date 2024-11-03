@@ -24,16 +24,16 @@ export function Home() {
           divider={<StackDivider borderColor="gray.200" />}
         >
           <Heading as="h1" size="xl" color={textColor} mb={4}>
-            DYS – Ihr Experte für Vorratsgesellschaften
+            CorpFactory – Ihr Experte für Vorratsgesellschaften
           </Heading>
           <Text fontSize="lg" color={textColor}>
-            Mit DYS sicher zur schnellen Handlungsfähigkeit!
+            Mit CorpFactory sicher zur schnellen Handlungsfähigkeit!
           </Text>
           <Text fontSize="md" color={textColor}>
-            Der Kauf einer Vorratsgesellschaft ist Vertrauenssache. Bei DYS sind
-            Sie in guten Händen. Über 20 Jahre Erfahrung, mehr als 8.000
-            verkaufte Gesellschaften und unsere juristische Kompetenz als
-            zugelassene Rechtsanwältinnen garantieren Ihnen nicht nur ein
+            Der Kauf einer Vorratsgesellschaft ist Vertrauenssache. Bei
+            CorpFactory sind Sie in guten Händen. Über 20 Jahre Erfahrung, mehr
+            als 8.000 verkaufte Gesellschaften und unsere juristische Kompetenz
+            als zugelassene Rechtsanwältinnen garantieren Ihnen nicht nur ein
             sicheres Produkt, sondern auch eine schnelle und unkomplizierte
             Abwicklung.
           </Text>
@@ -57,7 +57,7 @@ export function Home() {
             kurz und stets den rechtlichen Entwicklungen angepasst.
           </Text>
           <Heading as="h2" size="lg" mt={6} color={textColor}>
-            Vorteile DYS
+            Vorteile CorpFactory
           </Heading>
           <Text fontSize="md" color={textColor}>
             Ein führender Anbieter, schon über 20 Jahre im Markt
@@ -81,19 +81,19 @@ export function Home() {
             Antje Borcherdt und Julia Vieth – erfahren und kompetent
           </Heading>
           <Text fontSize="md" color={textColor}>
-            DYS wurde im Jahr 2002 von uns, Antje Borcherdt und Julia Vieth,
-            gegründet. Wir sind in Berlin zugelassene Rechtsanwältinnen. Bevor
-            wir DYS gegründet haben, waren wir in Kanzleien und Unternehmen im
-            In- und Ausland tätig und haben Erfahrung im Gesellschafts-,
-            Wirtschafts- und Immobilienrecht gesammelt.
+            CorpFactory wurde im Jahr 2002 von uns, Antje Borcherdt und Julia
+            Vieth, gegründet. Wir sind in Berlin zugelassene Rechtsanwältinnen.
+            Bevor wir CorpFactory gegründet haben, waren wir in Kanzleien und
+            Unternehmen im In- und Ausland tätig und haben Erfahrung im
+            Gesellschafts-, Wirtschafts- und Immobilienrecht gesammelt.
           </Text>
           <Text fontSize="md" color={textColor}>
-            Seit über 20 Jahren leiten wir DYS als inhabergeführtes Unternehmen.
-            Im persönlichen Kontakt mit unseren Kunden finden wir heraus, worauf
-            es wirklich ankommt und reagieren flexibel auf die sich stetig
-            ändernden Anforderungen. Nur so können wir vorausschauend die besten
-            Lösungen für unsere Kunden finden. Das ist unser persönliches
-            Anliegen.
+            Seit über 20 Jahren leiten wir CorpFactory als inhabergeführtes
+            Unternehmen. Im persönlichen Kontakt mit unseren Kunden finden wir
+            heraus, worauf es wirklich ankommt und reagieren flexibel auf die
+            sich stetig ändernden Anforderungen. Nur so können wir
+            vorausschauend die besten Lösungen für unsere Kunden finden. Das ist
+            unser persönliches Anliegen.
           </Text>
           <Text fontSize="md" color={textColor}>
             Auch in der Abstimmung mit den beratenden Anwälten können wir auf

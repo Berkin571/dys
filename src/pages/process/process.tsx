@@ -61,9 +61,9 @@ export function Process() {
           </Heading>
 
           <Text fontSize="lg" textAlign="center">
-            Der Kauf einer Vorratsgesellschaft bei DYS ist ein schneller und
-            unkomplizierter Prozess, der Ihnen den sofortigen Einstieg in die
-            Geschäftswelt ermöglicht. Hier sind die Schritte, die Sie
+            Der Kauf einer Vorratsgesellschaft bei CorpFactory ist ein schneller
+            und unkomplizierter Prozess, der Ihnen den sofortigen Einstieg in
+            die Geschäftswelt ermöglicht. Hier sind die Schritte, die Sie
             durchlaufen werden:
           </Text>
 
