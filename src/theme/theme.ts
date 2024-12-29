@@ -5,7 +5,7 @@ const config: ThemeConfig = {
   initialColorMode: 'light',
   useSystemColorMode: false,
 };
-ed < s;
+
 const colors = {
   brand: {
     50: '#E1F6FA',
