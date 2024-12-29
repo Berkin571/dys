@@ -13,54 +13,54 @@ import {
   AccordionPanel,
   AccordionIcon,
   Image,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 import {
   CalendarIcon,
   EditIcon,
   ExternalLinkIcon,
   InfoIcon,
   PhoneIcon,
-} from "@chakra-ui/icons";
+} from '@chakra-ui/icons';
 
-import { RiServiceFill } from "react-icons/ri";
-import { TbFlagStar } from "react-icons/tb";
+import { RiServiceFill } from 'react-icons/ri';
+import { TbFlagStar } from 'react-icons/tb';
 
-import image from "../../assets/process.jpg";
+import image from '../../assets/process.jpg';
 
-import "./process.scss";
+import './process.scss';
 
 export function Process() {
-  const bg = useColorModeValue("gray.50", "gray.800");
-  const color = useColorModeValue("gray.700", "gray.200");
-  const accentColor = useColorModeValue("brand.500", "brand.500");
+  const bg = useColorModeValue('gray.50', 'gray.800');
+  const color = useColorModeValue('gray.700', 'gray.200');
+  const accentColor = useColorModeValue('brand.500', 'brand.500');
 
   return (
     <>
-      <Box className="image-container">
-        <Image src={image} alt="Ablauf" className="full-width-image" />
+      <Box className='image-container'>
+        <Image src={image} alt='Ablauf' className='full-width-image' />
       </Box>
       <Box
-        className="ablauf"
+        className='ablauf'
         bg={bg}
         color={color}
-        maxW={{ base: "full", md: "container.lg" }}
-        mx="auto"
-        borderRadius="5px"
-        boxShadow="lg"
+        maxW={{ base: 'full', md: 'container.lg' }}
+        mx='auto'
+        borderRadius='5px'
+        boxShadow='lg'
         p={{ base: 4, md: 8 }}
       >
-        <VStack spacing={8} align="stretch">
+        <VStack spacing={8} align='stretch'>
           <Heading
-            as="h1"
-            size="xl"
-            textAlign="center"
+            as='h1'
+            size='xl'
+            textAlign='center'
             mb={6}
             color={accentColor}
           >
             Ablauf des Kaufs von Vorratsgesellschaften
           </Heading>
 
-          <Text fontSize="lg" textAlign="center">
+          <Text fontSize='lg' textAlign='center'>
             Der Kauf einer Vorratsgesellschaft bei CorpFactory ist ein schneller
             und unkomplizierter Prozess, der Ihnen den sofortigen Einstieg in
             die Geschäftswelt ermöglicht. Hier sind die Schritte, die Sie
@@ -71,7 +71,7 @@ export function Process() {
             <AccordionItem>
               <h2>
                 <AccordionButton>
-                  <Box flex="1" textAlign="left">
+                  <Box flex='1' textAlign='left'>
                     <HStack>
                       <Icon
                         as={InfoIcon}
@@ -79,7 +79,7 @@ export function Process() {
                         boxSize={6}
                         marginRight={1.5}
                       />
-                      <Text as="span">1. Auswahl der Gesellschaft</Text>
+                      <Text as='span'>1. Auswahl der Gesellschaft</Text>
                     </HStack>
                   </Box>
                   <AccordionIcon />
@@ -100,7 +100,7 @@ export function Process() {
             <AccordionItem>
               <h2>
                 <AccordionButton>
-                  <Box flex="1" textAlign="left">
+                  <Box flex='1' textAlign='left'>
                     <HStack>
                       <Icon
                         as={PhoneIcon}
@@ -108,7 +108,7 @@ export function Process() {
                         boxSize={6}
                         marginRight={1.5}
                       />
-                      <Text as="span">2. Kontaktaufnahme und Beratung</Text>
+                      <Text as='span'>2. Kontaktaufnahme und Beratung</Text>
                     </HStack>
                   </Box>
                   <AccordionIcon />
@@ -128,7 +128,7 @@ export function Process() {
             <AccordionItem>
               <h2>
                 <AccordionButton>
-                  <Box flex="1" textAlign="left">
+                  <Box flex='1' textAlign='left'>
                     <HStack>
                       <Icon
                         as={EditIcon}
@@ -136,7 +136,7 @@ export function Process() {
                         boxSize={6}
                         marginRight={1.5}
                       />
-                      <Text as="span">
+                      <Text as='span'>
                         3. Vertragserstellung und Unterzeichnung
                       </Text>
                     </HStack>
@@ -159,7 +159,7 @@ export function Process() {
             <AccordionItem>
               <h2>
                 <AccordionButton>
-                  <Box flex="1" textAlign="left">
+                  <Box flex='1' textAlign='left'>
                     <HStack>
                       <Icon
                         as={CalendarIcon}
@@ -167,7 +167,7 @@ export function Process() {
                         boxSize={6}
                         marginRight={1.5}
                       />
-                      <Text as="span">4. Notartermin und Umschreibung</Text>
+                      <Text as='span'>4. Notartermin und Umschreibung</Text>
                     </HStack>
                   </Box>
                   <AccordionIcon />
@@ -188,7 +188,7 @@ export function Process() {
             <AccordionItem>
               <h2>
                 <AccordionButton>
-                  <Box flex="1" textAlign="left">
+                  <Box flex='1' textAlign='left'>
                     <HStack>
                       <Icon
                         as={ExternalLinkIcon}
@@ -196,7 +196,7 @@ export function Process() {
                         boxSize={6}
                         marginRight={1.5}
                       />
-                      <Text as="span">5. Handelsregistereintragung</Text>
+                      <Text as='span'>5. Handelsregistereintragung</Text>
                     </HStack>
                   </Box>
                   <AccordionIcon />
@@ -216,7 +216,7 @@ export function Process() {
             <AccordionItem>
               <h2>
                 <AccordionButton>
-                  <Box flex="1" textAlign="left">
+                  <Box flex='1' textAlign='left'>
                     <HStack>
                       <Icon
                         as={TbFlagStar}
@@ -224,7 +224,7 @@ export function Process() {
                         boxSize={6}
                         marginRight={1.5}
                       />
-                      <Text as="span">6. Geschäftsbeginn</Text>
+                      <Text as='span'>6. Geschäftsbeginn</Text>
                     </HStack>
                   </Box>
                   <AccordionIcon />
@@ -244,7 +244,7 @@ export function Process() {
             <AccordionItem>
               <h2>
                 <AccordionButton>
-                  <Box flex="1" textAlign="left">
+                  <Box flex='1' textAlign='left'>
                     <HStack>
                       <Icon
                         as={RiServiceFill}
@@ -252,7 +252,7 @@ export function Process() {
                         boxSize={6}
                         marginRight={1.5}
                       />
-                      <Text as="span">7. Unser Service</Text>
+                      <Text as='span'>7. Unser Service</Text>
                     </HStack>
                   </Box>
                   <AccordionIcon />

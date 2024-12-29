@@ -1,5 +1,5 @@
-import { createInstance } from "i18next";
-import { initReactI18next } from "react-i18next";
+import { createInstance } from 'i18next';
+import { initReactI18next } from 'react-i18next';
 
 // german translations
 // import pagesDE from "./translations/de/pages.json";
@@ -7,7 +7,7 @@ import { initReactI18next } from "react-i18next";
 // english translations
 // import pagesEN from "./translations/en/pages.json";
 
-import type { i18n as i18nType } from "i18next";
+import type { i18n as i18nType } from 'i18next';
 
 export const i18nResources = {
   de: {
@@ -18,7 +18,7 @@ export const i18nResources = {
   },
 };
 
-export const i18nNamespaces = ["general", "components", "containers"];
+export const i18nNamespaces = ['general', 'components', 'containers'];
 
 let i18n: i18nType = createInstance();
 
@@ -30,7 +30,7 @@ if (!i18n.isInitialized) {
   i18n.use(initReactI18next).init({
     partialBundledLanguages: true,
     debug: false,
-    lng: "de",
+    lng: 'de',
     interpolation: {
       escapeValue: false,
     },

@@ -1,1 +1,1 @@
-export { Process } from "./process";
+export { Process } from './process';

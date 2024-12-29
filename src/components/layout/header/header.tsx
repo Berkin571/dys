@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Box,
   Text,
@@ -15,17 +15,17 @@ import {
   DrawerHeader,
   DrawerBody,
   Button,
-} from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { useNavigate } from "react-router-dom";
-import "./header.css";
+} from '@chakra-ui/react';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router-dom';
+import './header.css';
 
 const Links = [
-  { name: "Über CorpFactory", url: "/about-us" },
-  { name: "Voratsgesellschaften", url: "/vortragsgesellschaften" },
-  { name: "Ablauf", url: "/ablauf" },
-  { name: "FAQ", url: "/faq" },
-  { name: "Kontakt", url: "/contact" },
+  { name: 'Über CorpFactory', url: '/about-us' },
+  { name: 'Voratsgesellschaften', url: '/vortragsgesellschaften' },
+  { name: 'Ablauf', url: '/ablauf' },
+  { name: 'FAQ', url: '/faq' },
+  { name: 'Kontakt', url: '/contact' },
 ];
 
 type NavLinkType = {
@@ -37,10 +37,10 @@ const NavLink = ({ children, url }: NavLinkType) => (
   <Link
     px={2}
     py={1}
-    rounded={"md"}
+    rounded={'md'}
     _hover={{
-      textDecoration: "none",
-      bg: "gray.200",
+      textDecoration: 'none',
+      bg: 'gray.200',
     }}
     href={url}
   >
@@ -62,57 +62,57 @@ export function Header() {
     }
   };
 
-  window.addEventListener("scroll", handleScroll);
+  window.addEventListener('scroll', handleScroll);
 
   const handleLogoClick = () => {
-    navigate("/");
+    navigate('/');
     onClose();
   };
 
   return (
     <>
       <Box
-        bg={scroll ? "gray.100" : "transparent"}
+        bg={scroll ? 'gray.100' : 'transparent'}
         px={4}
-        position="sticky"
+        position='sticky'
         top={0}
         zIndex={1}
-        boxShadow={scroll ? "sm" : "none"}
+        boxShadow={scroll ? 'sm' : 'none'}
       >
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
-            size={"md"}
+            size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
+            aria-label={'Open Menu'}
+            display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={"center"}>
-            <Box display={{ base: "none", md: "block" }}>
-              <Text fontSize="xl" fontWeight="bold">
+          <HStack spacing={8} alignItems={'center'}>
+            <Box display={{ base: 'none', md: 'block' }}>
+              <Text fontSize='xl' fontWeight='bold'>
                 CorpFactory
               </Text>
             </Box>
             <HStack
-              as={"nav"}
+              as={'nav'}
               spacing={4}
-              display={{ base: "none", md: "flex" }}
+              display={{ base: 'none', md: 'flex' }}
             >
-              {Links.map((link) => (
+              {Links.map(link => (
                 <NavLink key={link.name} url={link.url}>
                   {link.name}
                 </NavLink>
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={"center"}>
+          <Flex alignItems={'center'}>
             <Button
               as={Link}
-              href="#"
-              bg={"brand.500"}
-              color={"white"}
+              href='#'
+              bg={'brand.500'}
+              color={'white'}
               _hover={{
-                bg: "brand.600",
+                bg: 'brand.600',
               }}
             >
               Online Reservieren
@@ -122,19 +122,19 @@ export function Header() {
 
         <Drawer
           isOpen={isOpen}
-          placement="left"
+          placement='left'
           onClose={onClose}
           returnFocusOnClose={false}
           onOverlayClick={onClose}
-          size="xs"
+          size='xs'
         >
           <DrawerOverlay />
           <DrawerContent>
             <DrawerHeader onClick={handleLogoClick}>CorpFactory</DrawerHeader>
             <DrawerCloseButton sx={{ marginTop: 2, marginRight: 2 }} />
             <DrawerBody>
-              <Stack as={"nav"} spacing={4}>
-                {Links.map((link) => (
+              <Stack as={'nav'} spacing={4}>
+                {Links.map(link => (
                   <NavLink key={link.name} url={link.url}>
                     {link.name}
                   </NavLink>

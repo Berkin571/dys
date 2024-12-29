@@ -1,1 +1,1 @@
-export { LectureCompanies } from "./lecture-companies";
+export { LectureCompanies } from './lecture-companies';

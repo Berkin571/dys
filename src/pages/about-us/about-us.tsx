@@ -6,35 +6,35 @@ import {
   HStack,
   Icon,
   useColorModeValue,
-} from "@chakra-ui/react";
-import { CheckCircleIcon } from "@chakra-ui/icons";
-import "./about-us.scss";
-import image from "../../assets/aboutus.jpg";
+} from '@chakra-ui/react';
+import { CheckCircleIcon } from '@chakra-ui/icons';
+import './about-us.scss';
+import image from '../../assets/aboutus.jpg';
 
 export function AboutUs() {
-  const bg = useColorModeValue("gray.50", "gray.800");
-  const color = useColorModeValue("gray.700", "gray.200");
-  const accentColor = useColorModeValue("brand.500", "brand.500");
+  const bg = useColorModeValue('gray.50', 'gray.800');
+  const color = useColorModeValue('gray.700', 'gray.200');
+  const accentColor = useColorModeValue('brand.500', 'brand.500');
 
   return (
     <>
-      <Box className="image-container">
-        <img src={image} alt="About Us" className="full-width-image" />
+      <Box className='image-container'>
+        <img src={image} alt='About Us' className='full-width-image' />
       </Box>
       <Box
-        className="about-us"
+        className='about-us'
         bg={bg}
         color={color}
         p={{ base: 4, md: 8 }}
-        borderRadius="lg"
-        boxShadow="lg"
+        borderRadius='lg'
+        boxShadow='lg'
       >
-        <VStack spacing={8} align="stretch">
-          <Heading as="h1" size="xl" textAlign="center">
+        <VStack spacing={8} align='stretch'>
+          <Heading as='h1' size='xl' textAlign='center'>
             CorpFactory – Ihr Experte für Vorratsgesellschaften
           </Heading>
 
-          <Text fontSize="lg" textAlign="center">
+          <Text fontSize='lg' textAlign='center'>
             Willkommen bei CorpFactory, Ihrem vertrauenswürdigen Partner für den
             Erwerb von Vorratsgesellschaften. Seit 2024 sind wir spezialisiert
             auf den Vertrieb vorgegründeter Gesellschaften, die Ihnen einen
@@ -43,7 +43,7 @@ export function AboutUs() {
           </Text>
 
           <Box>
-            <Heading as="h2" size="lg" mb={4} color={accentColor}>
+            <Heading as='h2' size='lg' mb={4} color={accentColor}>
               Wer wir sind
             </Heading>
             <Text>
@@ -57,7 +57,7 @@ export function AboutUs() {
           </Box>
 
           <Box>
-            <Heading as="h2" size="lg" mb={4} color={accentColor}>
+            <Heading as='h2' size='lg' mb={4} color={accentColor}>
               Was wir tun
             </Heading>
             <Text>
@@ -72,36 +72,36 @@ export function AboutUs() {
           </Box>
 
           <Box>
-            <Heading as="h2" size="lg" mb={4} color={accentColor}>
+            <Heading as='h2' size='lg' mb={4} color={accentColor}>
               Warum wir?
             </Heading>
-            <VStack align="start">
-              <HStack className="h-stack">
-                <Icon as={CheckCircleIcon} color="brand.500" />
+            <VStack align='start'>
+              <HStack className='h-stack'>
+                <Icon as={CheckCircleIcon} color='brand.500' />
                 <Text>
                   <strong>Schnelligkeit:</strong> Mit unseren
                   Vorratsgesellschaften können Sie innerhalb weniger Stunden
                   eine voll funktionsfähige Gesellschaft erwerben.
                 </Text>
               </HStack>
-              <HStack className="h-stack">
-                <Icon as={CheckCircleIcon} color="brand.500" />
+              <HStack className='h-stack'>
+                <Icon as={CheckCircleIcon} color='brand.500' />
                 <Text>
                   <strong>Sicherheit:</strong> Alle unsere Gesellschaften sind
                   frei von Verbindlichkeiten und haben keine Geschäftstätigkeit
                   aufgenommen.
                 </Text>
               </HStack>
-              <HStack className="h-stack">
-                <Icon as={CheckCircleIcon} color="brand.500" />
+              <HStack className='h-stack'>
+                <Icon as={CheckCircleIcon} color='brand.500' />
                 <Text>
                   <strong>Erfahrung:</strong> Profitieren Sie von unserer
                   langjährigen Erfahrung und unserem umfassenden Wissen im
                   Bereich der Unternehmensgründung.
                 </Text>
               </HStack>
-              <HStack className="h-stack">
-                <Icon as={CheckCircleIcon} color="brand.500" />
+              <HStack className='h-stack'>
+                <Icon as={CheckCircleIcon} color='brand.500' />
                 <Text>
                   <strong>Kundensupport:</strong> Unser freundliches und
                   kompetentes Team steht Ihnen bei jedem Schritt zur Seite und
@@ -112,7 +112,7 @@ export function AboutUs() {
           </Box>
 
           <Box>
-            <Heading as="h2" size="lg" mb={4} color={accentColor}>
+            <Heading as='h2' size='lg' mb={4} color={accentColor}>
               Unsere Mission
             </Heading>
             <Text>

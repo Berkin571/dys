@@ -1,5 +1,5 @@
-import { useState, ChangeEvent, FormEvent } from "react";
-import emailjs from "emailjs-com";
+import { useState, ChangeEvent, FormEvent } from 'react';
+import emailjs from 'emailjs-com';
 import {
   Box,
   Button,
@@ -11,9 +11,9 @@ import {
   Heading,
   Text,
   useColorModeValue,
-} from "@chakra-ui/react";
-import OfficePicture from "../../assets/office.jpg";
-import "./contact.scss";
+} from '@chakra-ui/react';
+import OfficePicture from '../../assets/office.jpg';
+import './contact.scss';
 
 interface FormData {
   [key: string]: string;
@@ -28,17 +28,17 @@ interface FormData {
 
 export function Contact() {
   const [formData, setFormData] = useState<FormData>({
-    anrede: "",
-    titel: "",
-    firstName: "",
-    lastName: "",
-    kanzleiFirma: "",
-    email: "",
-    message: "",
+    anrede: '',
+    titel: '',
+    firstName: '',
+    lastName: '',
+    kanzleiFirma: '',
+    email: '',
+    message: '',
   });
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     const { name, value } = e.target;
     setFormData({
@@ -66,128 +66,128 @@ export function Contact() {
         import.meta.env.VITE_EMAIL_SERVICE!,
         import.meta.env.VITE_EMAIL_TEMPLATE!,
         templateParams,
-        import.meta.env.VITE_EMAIL_USERID!
+        import.meta.env.VITE_EMAIL_USERID!,
       )
       .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-          alert("E-Mail erfolgreich versendet!");
+        response => {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('E-Mail erfolgreich versendet!');
         },
-        (err) => {
-          console.error("FAILED...", err);
-          alert("Fehler beim Versenden der E-Mail.");
-        }
+        err => {
+          console.error('FAILED...', err);
+          alert('Fehler beim Versenden der E-Mail.');
+        },
       );
 
-    console.log(formData, "###");
+    console.log(formData, '###');
   };
 
-  const bg = useColorModeValue("gray.50", "gray.800");
-  const color = useColorModeValue("gray.700", "gray.200");
+  const bg = useColorModeValue('gray.50', 'gray.800');
+  const color = useColorModeValue('gray.700', 'gray.200');
 
   return (
     <>
-      <Box className="image-container">
-        <img src={OfficePicture} alt="Office" className="full-width-image" />
+      <Box className='image-container'>
+        <img src={OfficePicture} alt='Office' className='full-width-image' />
       </Box>
       <Box
-        maxW={{ base: "full", md: "container.md" }}
-        mx="auto"
-        borderRadius="md"
+        maxW={{ base: 'full', md: 'container.md' }}
+        mx='auto'
+        borderRadius='md'
         bg={bg}
         color={color}
         p={5}
-        boxShadow="lg"
+        boxShadow='lg'
       >
-        <Heading as="h1" size="2xl" textAlign="center" mb={6}>
+        <Heading as='h1' size='2xl' textAlign='center' mb={6}>
           Kontaktieren Sie uns
         </Heading>
-        <Text fontSize="lg" mb={6} textAlign="center">
+        <Text fontSize='lg' mb={6} textAlign='center'>
           Haben Sie Fragen oder benötigen Sie Unterstützung? Füllen Sie das
           untenstehende Formular aus, um uns eine Nachricht zu senden. Unser
           Team wird sich so schnell wie möglich bei Ihnen melden.
         </Text>
-        <Box as="form" onSubmit={handleSubmit}>
+        <Box as='form' onSubmit={handleSubmit}>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
-            <FormControl id="anrede">
+            <FormControl id='anrede'>
               <Select
-                name="anrede"
-                placeholder="Anrede"
+                name='anrede'
+                placeholder='Anrede'
                 value={formData.anrede}
                 onChange={handleChange}
               >
-                <option value="">Anrede</option>
-                <option value="Herr">Herr</option>
-                <option value="Frau">Frau</option>
-                <option value="Dr.">Dr.</option>
+                <option value=''>Anrede</option>
+                <option value='Herr'>Herr</option>
+                <option value='Frau'>Frau</option>
+                <option value='Dr.'>Dr.</option>
               </Select>
             </FormControl>
-            <FormControl id="titel">
+            <FormControl id='titel'>
               <Input
-                placeholder="Titel"
-                type="text"
-                name="titel"
+                placeholder='Titel'
+                type='text'
+                name='titel'
                 value={formData.titel}
                 onChange={handleChange}
               />
             </FormControl>
-            <FormControl id="firstName">
+            <FormControl id='firstName'>
               <Input
-                placeholder="Vorname"
-                type="text"
-                name="firstName"
+                placeholder='Vorname'
+                type='text'
+                name='firstName'
                 value={formData.firstName}
                 onChange={handleChange}
               />
             </FormControl>
-            <FormControl id="lastName">
+            <FormControl id='lastName'>
               <Input
-                placeholder="Nachname"
-                type="text"
-                name="lastName"
+                placeholder='Nachname'
+                type='text'
+                name='lastName'
                 value={formData.lastName}
                 onChange={handleChange}
               />
             </FormControl>
             <FormControl
-              id="kanzleiFirma"
-              gridColumn={{ base: "span 1", md: "span 2" }}
+              id='kanzleiFirma'
+              gridColumn={{ base: 'span 1', md: 'span 2' }}
             >
               <Input
-                placeholder="Kanzlei / Firma"
-                type="text"
-                name="kanzleiFirma"
+                placeholder='Kanzlei / Firma'
+                type='text'
+                name='kanzleiFirma'
                 value={formData.kanzleiFirma}
                 onChange={handleChange}
               />
             </FormControl>
             <FormControl
-              id="email"
-              gridColumn={{ base: "span 1", md: "span 2" }}
+              id='email'
+              gridColumn={{ base: 'span 1', md: 'span 2' }}
             >
               <Input
-                placeholder="E-Mail Adresse*"
-                type="email"
-                name="email"
+                placeholder='E-Mail Adresse*'
+                type='email'
+                name='email'
                 value={formData.email}
                 onChange={handleChange}
                 required
               />
             </FormControl>
             <FormControl
-              id="message"
-              gridColumn={{ base: "span 1", md: "span 2" }}
+              id='message'
+              gridColumn={{ base: 'span 1', md: 'span 2' }}
             >
               <Textarea
-                placeholder="Ihre Nachricht*"
-                name="message"
+                placeholder='Ihre Nachricht*'
+                name='message'
                 value={formData.message}
                 onChange={handleChange}
                 required
               />
             </FormControl>
           </SimpleGrid>
-          <Button type="submit" colorScheme="brand" w="full" mt={4}>
+          <Button type='submit' colorScheme='brand' w='full' mt={4}>
             Absenden
           </Button>
         </Box>

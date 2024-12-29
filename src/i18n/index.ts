@@ -1,1 +1,1 @@
-export { getAppI18nInstance } from "./i18n";
+export { getAppI18nInstance } from './i18n';
