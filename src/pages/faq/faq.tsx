@@ -16,7 +16,7 @@ import Image from '../../assets/faq.jpg';
 export function FAQ() {
   const bg = useColorModeValue('gray.50', 'gray.800');
   const color = useColorModeValue('gray.700', 'gray.200');
-  const accentColor = useColorModeValue('brand.500', 'brand.500');
+  const accentColor = useColorModeValue('blue.700', 'blue.700');
 
   const faqImage = Image;
 
@@ -68,9 +68,8 @@ export function FAQ() {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
-              Wir bieten eine Vielzahl von Gesellschaftsformen an, darunter
-              GmbH, UG, AG und viele mehr, um den unterschiedlichen Bedürfnissen
-              unserer Kunden gerecht zu werden.
+              Wir haben uns auf die Gründung und Vertrieb von UGs und GmbHs
+              spezialisiert.
             </AccordionPanel>
           </AccordionItem>
 
@@ -90,14 +89,42 @@ export function FAQ() {
           <AccordionItem>
             <AccordionButton>
               <Box flex='1' textAlign='left'>
+                Verfügen die Vorratsgesellschaften über ein Bankkonto?
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              Ja, alle unsere Vorratsgesellschaften verfügen über ein
+              übernahmefähiges Bankkonto, auf dem das jeweilige satzungsmäßige
+              Stammkapital zum Zeitpunkt des Verkaufs voll eingezahlt ist. Nach
+              erfolgreicher Umschreibung des Bankkontos auf die neue
+              Geschäftsführung kann das Bankkonto uneingeschränkt als
+              Geschäftskonto genutzt werden. Hierfür muss sich die neue
+              Geschäftsführung bei der Bank legitimieren und eine sogenannte KYC
+              (Know Your Customer)-Prüfung durchlaufen. Dieser Prozess kann je
+              nach Bank unterschiedlich viel Zeit in Anspruch nehmen. Wir
+              unterstützen Sie bei der Vorbereitung der relevanten Unterlagen,
+              damit die Kontoumschreibung möglichst schnell und reibungslos
+              vollzogen werden kann.
+            </AccordionPanel>
+          </AccordionItem>
+
+          <AccordionItem>
+            <AccordionButton>
+              <Box flex='1' textAlign='left'>
                 Wie lange dauert der Erwerb einer Vorratsgesellschaft?
               </Box>
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
-              Der Erwerb einer Vorratsgesellschaft kann innerhalb weniger
-              Stunden abgeschlossen werden, sodass Sie schnell handlungsfähig
-              sind.
+              Der Erwerb einer Vorratsgesellschaft kann innerhalb kurzer Zeit
+              abgeschlossen werden, sodass Sie schnell handlungsfähig sind. Die
+              genaue Dauer hängt vor allem von der nächstmöglichen Verfügbarkeit
+              eines Notartermins sowie der Vollständigkeit der uns vorliegenden
+              Unterlagen ab. Der gesamte Prozess kann in der Regel innerhalb von
+              wenigen Werktagen abgeschlossen werden. Falls Sie eine
+              Vorratsgesellschaft dringend benötigen, sprechen Sie uns bitte
+              darauf an.
             </AccordionPanel>
           </AccordionItem>
 
@@ -110,10 +137,13 @@ export function FAQ() {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
-              Sie benötigen grundlegende Dokumente wie einen gültigen
-              Personalausweis oder Reisepass sowie eventuell zusätzliche
-              Unterlagen, abhängig von der Art der Gesellschaft, die Sie
-              erwerben möchten.
+              Nachdem Sie sich für eine Vorratsgesellschaft entschieden haben,
+              übersenden wir Ihnen eine Checkliste, welche alle Informationen
+              abfragt, die für die Beurkundung durch den Notar sowie der
+              Handelsregisteranmeldung benötigt werden. Neben der vollständig
+              ausgefüllten Checkliste benötigen wir einen gültigen
+              Personalausweis oder Reisepass sowie je nach Staatsangehörigkeit,
+              Informationen und Nachweise zu Ihrem Aufenthaltsstatus.
             </AccordionPanel>
           </AccordionItem>
 

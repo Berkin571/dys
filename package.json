@@ -1,5 +1,5 @@
 {
-  "name": "corpfactory",
+  "name": "EKP Corporations",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -20,7 +20,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^12.3.1",
-    "react-icons": "^5.2.1",
+    "react-icons": "^5.4.0",
     "react-router-dom": "^6.10.0"
   },
   "devDependencies": {

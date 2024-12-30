@@ -24,14 +24,14 @@ export function Home() {
           divider={<StackDivider borderColor='gray.200' />}
         >
           <Heading as='h1' size='xl' color={textColor} mb={4}>
-            CorpFactory – Ihr Experte für Vorratsgesellschaften
+            EKP Corporations – Ihr Experte für Vorratsgesellschaften
           </Heading>
           <Text fontSize='lg' color={textColor}>
-            Mit CorpFactory sicher zur schnellen Handlungsfähigkeit!
+            Mit EKP Corporations sicher zur schnellen Handlungsfähigkeit!
           </Text>
           <Text fontSize='md' color={textColor}>
-            Der Kauf einer Vorratsgesellschaft ist Vertrauenssache. Bei
-            CorpFactory sind Sie in guten Händen. Über 20 Jahre Erfahrung, mehr
+            Der Kauf einer Vorratsgesellschaft ist Vertrauenssache. Bei EKP
+            Corporations sind Sie in guten Händen. Über 20 Jahre Erfahrung, mehr
             als 8.000 verkaufte Gesellschaften und unsere juristische Kompetenz
             als zugelassene Rechtsanwältinnen garantieren Ihnen nicht nur ein
             sicheres Produkt, sondern auch eine schnelle und unkomplizierte
@@ -57,7 +57,7 @@ export function Home() {
             kurz und stets den rechtlichen Entwicklungen angepasst.
           </Text>
           <Heading as='h2' size='lg' mt={6} color={textColor}>
-            Vorteile CorpFactory
+            Vorteile EKP Corporations
           </Heading>
           <Text fontSize='md' color={textColor}>
             Ein führender Anbieter, schon über 20 Jahre im Markt
@@ -81,14 +81,15 @@ export function Home() {
             Antje Borcherdt und Julia Vieth – erfahren und kompetent
           </Heading>
           <Text fontSize='md' color={textColor}>
-            CorpFactory wurde im Jahr 2002 von uns, Antje Borcherdt und Julia
-            Vieth, gegründet. Wir sind in Berlin zugelassene Rechtsanwältinnen.
-            Bevor wir CorpFactory gegründet haben, waren wir in Kanzleien und
-            Unternehmen im In- und Ausland tätig und haben Erfahrung im
-            Gesellschafts-, Wirtschafts- und Immobilienrecht gesammelt.
+            EKP Corporations wurde im Jahr 2002 von uns, Antje Borcherdt und
+            Julia Vieth, gegründet. Wir sind in Berlin zugelassene
+            Rechtsanwältinnen. Bevor wir EKP Corporations gegründet haben, waren
+            wir in Kanzleien und Unternehmen im In- und Ausland tätig und haben
+            Erfahrung im Gesellschafts-, Wirtschafts- und Immobilienrecht
+            gesammelt.
           </Text>
           <Text fontSize='md' color={textColor}>
-            Seit über 20 Jahren leiten wir CorpFactory als inhabergeführtes
+            Seit über 20 Jahren leiten wir EKP Corporations als inhabergeführtes
             Unternehmen. Im persönlichen Kontakt mit unseren Kunden finden wir
             heraus, worauf es wirklich ankommt und reagieren flexibel auf die
             sich stetig ändernden Anforderungen. Nur so können wir
@@ -104,7 +105,7 @@ export function Home() {
           </Text>
           <Button
             onClick={() => navigate('/kontakt')}
-            colorScheme='brand'
+            colorScheme='blue'
             size='lg'
             mt={6}
           >

@@ -100,12 +100,13 @@ export function Contact() {
         boxShadow='lg'
       >
         <Heading as='h1' size='2xl' textAlign='center' mb={6}>
-          Kontaktieren Sie uns
+          Senden Sie uns eine Anfrage
         </Heading>
         <Text fontSize='lg' mb={6} textAlign='center'>
-          Haben Sie Fragen oder benötigen Sie Unterstützung? Füllen Sie das
-          untenstehende Formular aus, um uns eine Nachricht zu senden. Unser
-          Team wird sich so schnell wie möglich bei Ihnen melden.
+          Möchten Sie eine Vorratsgesellschaft kaufen oder haben Sie noch
+          Fragen? Füllen Sie das untenstehende Formular aus, um uns eine Anfrage
+          zu senden. Unser Team wird sich so schnell wie möglich bei Ihnen
+          melden.
         </Text>
         <Box as='form' onSubmit={handleSubmit}>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
@@ -187,7 +188,7 @@ export function Contact() {
               />
             </FormControl>
           </SimpleGrid>
-          <Button type='submit' colorScheme='brand' w='full' mt={4}>
+          <Button type='submit' colorScheme='blue' w='full' mt={4}>
             Absenden
           </Button>
         </Box>

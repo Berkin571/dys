@@ -7,17 +7,17 @@ const config: ThemeConfig = {
 };
 
 const colors = {
-  brand: {
-    50: '#E1F6FA',
-    100: '#B3E7F0',
-    200: '#84D8E5',
-    300: '#55C9DA',
-    400: '#27BBD0',
-    500: '#0E7490',
-    600: '#0B5A70',
-    700: '#083F50',
-    800: '#052430',
-    900: '#021010',
+  blue: {
+    50: '#ebf8ff',
+    100: '#bee3f8',
+    200: '#90cdf4',
+    300: '#63b3ed',
+    400: '#4299e1',
+    500: '#3182ce',
+    600: '#2b6cb0',
+    700: '#2c5282',
+    800: '#2a4365',
+    900: '#1A365D',
   },
 };
 
@@ -51,25 +51,25 @@ const theme = extendTheme({
       },
       variants: {
         solid: (props: any) => ({
-          bg: props.colorMode === 'dark' ? 'brand.500' : 'brand.500',
+          bg: props.colorMode === 'dark' ? 'blue.700' : 'blue.700',
           color: 'white',
           _hover: {
-            bg: props.colorMode === 'dark' ? 'brand.600' : 'brand.600',
+            bg: props.colorMode === 'dark' ? 'blue.600' : 'blue.600',
           },
         }),
         outline: (props: any) => ({
-          borderColor: props.colorMode === 'dark' ? 'brand.500' : 'brand.500',
-          color: props.colorMode === 'dark' ? 'brand.500' : 'brand.500',
+          borderColor: props.colorMode === 'dark' ? 'blue.700' : 'blue.700',
+          color: props.colorMode === 'dark' ? 'blue.700' : 'blue.700',
           _hover: {
-            bg: props.colorMode === 'dark' ? 'brand.600' : 'brand.600',
+            bg: props.colorMode === 'dark' ? 'blue.600' : 'blue.600',
             borderColor: 'transparent',
             color: 'white',
           },
         }),
         ghost: (props: any) => ({
-          color: props.colorMode === 'dark' ? 'brand.500' : 'brand.500',
+          color: props.colorMode === 'dark' ? 'blue.700' : 'blue.700',
           _hover: {
-            bg: props.colorMode === 'dark' ? 'brand.600' : 'brand.600',
+            bg: props.colorMode === 'dark' ? 'blue.600' : 'blue.600',
             color: 'white',
           },
         }),
@@ -83,8 +83,8 @@ const theme = extendTheme({
       baseStyle: {
         field: {
           _focus: {
-            borderColor: 'brand.500',
-            boxShadow: '0 0 0 1px brand.500',
+            borderColor: 'blue.700',
+            boxShadow: '0 0 0 1px blue.700',
           },
         },
       },
@@ -93,8 +93,8 @@ const theme = extendTheme({
       baseStyle: {
         field: {
           _focus: {
-            borderColor: 'brand.500',
-            boxShadow: '0 0 0 1px brand.500',
+            borderColor: 'blue.700',
+            boxShadow: '0 0 0 1px blue.700',
           },
         },
       },

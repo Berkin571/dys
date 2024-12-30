@@ -15,7 +15,7 @@ import './footer.scss';
 export function Footer() {
   const bg = useColorModeValue('gray.50', 'gray.800');
   const color = useColorModeValue('gray.700', 'gray.200');
-  const accentColor = useColorModeValue('brand.500', 'brand.200');
+  const accentColor = useColorModeValue('blue.700', 'blue.700');
 
   return (
     <Box bg={bg} color={color} py={10}>
@@ -32,8 +32,8 @@ export function Footer() {
           spacing={6}
           className='link-container'
         >
-          <Link href='/about-us'>CorpFactory</Link>
-          <Link href='/voratsgesellschaften'>Voratsgesellschaften</Link>
+          <Link href='/about-us'>EKP Corporations</Link>
+          <Link href='/vorratsgesellschaften'>Vorratsgesellschaften</Link>
           <Link href='/ablauf'>Ablauf</Link>
           <Link href='/faq'>FAQ</Link>
           <Link href='/contact'>Kontakt</Link>
@@ -54,7 +54,7 @@ export function Footer() {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Text>© 2024 CorpFactory. Alle Rechte vorbehalten.</Text>
+          <Text>© 2024 EKP Corporations. Alle Rechte vorbehalten.</Text>
           <Stack direction='row' spacing={6}>
             <IconButton
               as='a'
@@ -63,7 +63,7 @@ export function Footer() {
               icon={<FaTwitter />}
               bg={accentColor}
               color='white'
-              _hover={{ bg: useColorModeValue('brand.600', 'brand.400') }}
+              _hover={{ bg: useColorModeValue('blue.600', 'blue.400') }}
             />
             <IconButton
               as='a'
@@ -72,7 +72,7 @@ export function Footer() {
               icon={<FaFacebook />}
               bg={accentColor}
               color='white'
-              _hover={{ bg: useColorModeValue('brand.600', 'brand.400') }}
+              _hover={{ bg: useColorModeValue('blue.600', 'blue.400') }}
             />
             <IconButton
               as='a'
@@ -81,7 +81,7 @@ export function Footer() {
               icon={<FaInstagram />}
               bg={accentColor}
               color='white'
-              _hover={{ bg: useColorModeValue('brand.600', 'brand.400') }}
+              _hover={{ bg: useColorModeValue('blue.600', 'blue.400') }}
             />
           </Stack>
         </Container>

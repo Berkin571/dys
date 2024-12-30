@@ -21,6 +21,7 @@ import {
   InfoIcon,
   PhoneIcon,
 } from '@chakra-ui/icons';
+import { BsBank } from 'react-icons/bs';
 
 import { RiServiceFill } from 'react-icons/ri';
 import { TbFlagStar } from 'react-icons/tb';
@@ -32,7 +33,7 @@ import './process.scss';
 export function Process() {
   const bg = useColorModeValue('gray.50', 'gray.800');
   const color = useColorModeValue('gray.700', 'gray.200');
-  const accentColor = useColorModeValue('brand.500', 'brand.500');
+  const accentColor = useColorModeValue('blue.700', 'blue.700');
 
   return (
     <>
@@ -61,10 +62,10 @@ export function Process() {
           </Heading>
 
           <Text fontSize='lg' textAlign='center'>
-            Der Kauf einer Vorratsgesellschaft bei CorpFactory ist ein schneller
-            und unkomplizierter Prozess, der Ihnen den sofortigen Einstieg in
-            die Geschäftswelt ermöglicht. Hier sind die Schritte, die Sie
-            durchlaufen werden:
+            Der Kauf einer Vorratsgesellschaft bei EKP Corporations ist ein
+            schneller und unkomplizierter Prozess, der Ihnen eine zügige
+            Handlungsfähigkeit mit Ihrer neuen Gesellschaft ermöglicht. Hier
+            sind die Schritte, die Sie durchlaufen werden:
           </Text>
 
           <Accordion allowToggle>
@@ -79,19 +80,19 @@ export function Process() {
                         boxSize={6}
                         marginRight={1.5}
                       />
-                      <Text as='span'>1. Auswahl der Gesellschaft</Text>
+                      <Text as='span'>1. Auswahl der Rechtsform</Text>
                     </HStack>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
-                Wählen Sie aus unserem umfangreichen Angebot an
-                Vorratsgesellschaften diejenige aus, die am besten zu Ihren
-                Anforderungen passt. Unser Portfolio umfasst verschiedene
-                Gesellschaftsformen wie GmbH, UG, AG und mehr, die alle bereits
-                gegründet und registriert sind, aber noch keine
-                Geschäftstätigkeit aufgenommen haben.
+                Wählen Sie die gewünschte Rechtsform für Ihre
+                Vorratsgesellschaften aus, die am besten zu Ihren Anforderungen
+                passt. Unser Portfolio umfasst GmbHs und UGs, die bereits
+                gegründet und im Handelsregister eingetragen sind, aber noch
+                keine Geschäftstätigkeit aufgenommen haben. Das jeweilige
+                Stammkapital ist zum Zeitpunkt des Verkaufs voll eingezahlt.
               </AccordionPanel>
             </AccordionItem>
 
@@ -108,15 +109,21 @@ export function Process() {
                         boxSize={6}
                         marginRight={1.5}
                       />
-                      <Text as='span'>2. Kontaktaufnahme und Beratung</Text>
+                      <Text as='span'>2. Kontaktaufnahme</Text>
                     </HStack>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
-                Setzen Sie sich mit uns in Verbindung, um Ihre Auswahl zu
-                bestätigen und alle offenen Fragen zu klären. Unser kompetentes
+                Wir freuen uns auf Ihre Anfrage! Füllen Sie hierfür unser
+                Kontaktformular aus und geben Sie die gewünschte Rechtsform an.
+                Wir prüfen Ihre Angaben und setzen uns umgehend mit Ihnen in
+                Verbindung um Ihre Auswahl zu bestätigen und Ihre offenen Fragen
+                zu klären. Wir besprechen mit Ihnen, welche unserer verfügbaren
+                Vorratsgesellschaften am besten zu Ihren Anforderungen geeignet
+                ist und übersenden Ihnen alle relevanten Informationen zu den
+                Gesellschaften, die für Sie in Frage kommen. Unser kompetentes
                 Team steht Ihnen zur Verfügung, um Ihnen eine individuelle
                 Beratung zu bieten und sicherzustellen, dass Sie die richtige
                 Entscheidung treffen.
@@ -247,12 +254,43 @@ export function Process() {
                   <Box flex='1' textAlign='left'>
                     <HStack>
                       <Icon
+                        as={BsBank}
+                        color={accentColor}
+                        boxSize={6}
+                        marginRight={1.5}
+                      />
+                      <Text as='span'>
+                        7. Unterstützung bei der Umschreibung des Bankkontos
+                      </Text>
+                    </HStack>
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                Wir unterstützen Sie bei der Umschreibung des Bankkontos auf die
+                neue Geschäftsführung. Hierfür muss sich die neue
+                Geschäftsführung bei der Bank legitimieren und eine sogenannte
+                KYC (Know Your Customer)-Prüfung durchlaufen. Dieser Prozess
+                kann je nach Bank unterschiedlich viel Zeit in Anspruch nehmen.
+                Wir unterstützen Sie bei der Vorbereitung der relevanten
+                Unterlagen, damit die Umschreibung des Bankkontos möglichst
+                schnell und reibungslos vollzogen werden kann.
+              </AccordionPanel>
+            </AccordionItem>
+
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box flex='1' textAlign='left'>
+                    <HStack>
+                      <Icon
                         as={RiServiceFill}
                         color={accentColor}
                         boxSize={6}
                         marginRight={1.5}
                       />
-                      <Text as='span'>7. Unser Service</Text>
+                      <Text as='span'>8. Unser Service</Text>
                     </HStack>
                   </Box>
                   <AccordionIcon />

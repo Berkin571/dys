@@ -18,10 +18,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/faq' element={<FAQ />} />
           <Route path='/ablauf' element={<Process />} />
-          <Route
-            path='/vortragsgesellschaften'
-            element={<LectureCompanies />}
-          />
+          <Route path='/vorratsgesellschaften' element={<LectureCompanies />} />
         </Routes>
         <Footer />
       </Router>

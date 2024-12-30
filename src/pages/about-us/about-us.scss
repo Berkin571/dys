@@ -1,11 +1,14 @@
 .image-container {
   width: 100%;
   overflow: hidden;
+  margin-bottom: 0 !important;
+  margin-top: -4rem !important;
 
   .full-width-image {
     width: 100%;
     height: auto;
     max-height: 300px;
+    clip-path: inset(25% 0 10% 0);
     object-fit: cover;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
@@ -53,7 +56,7 @@
   }
 
   h2 {
-    border-left: 4px solid #0e7490;
+    border-left: 4px solid #0f3f6c;
     padding-left: 0.5rem;
   }
 }

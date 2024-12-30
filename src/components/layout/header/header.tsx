@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import {
   Box,
-  Text,
   Flex,
   IconButton,
   Link,
@@ -19,10 +18,11 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 import './header.css';
+import logo from '../../../assets/logo_schmal_2.png';
 
 const Links = [
-  { name: 'Über CorpFactory', url: '/about-us' },
-  { name: 'Voratsgesellschaften', url: '/vortragsgesellschaften' },
+  { name: 'Über EKP Corporations', url: '/about-us' },
+  { name: 'Vorratsgesellschaften', url: '/vorratsgesellschaften' },
   { name: 'Ablauf', url: '/ablauf' },
   { name: 'FAQ', url: '/faq' },
   { name: 'Kontakt', url: '/contact' },
@@ -54,6 +54,8 @@ export function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [scroll, setScroll] = useState(false);
 
+  const ekpCorporationsLogo = logo;
+
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setScroll(true);
@@ -69,10 +71,15 @@ export function Header() {
     onClose();
   };
 
+  const handleNavigation = () => {
+    navigate('/contact');
+  };
+
   return (
     <>
       <Box
-        bg={scroll ? 'gray.100' : 'transparent'}
+        bg={scroll ? 'white' : 'transparent'}
+        className={'header-container'}
         px={4}
         position='sticky'
         top={0}
@@ -89,9 +96,11 @@ export function Header() {
           />
           <HStack spacing={8} alignItems={'center'}>
             <Box display={{ base: 'none', md: 'block' }}>
-              <Text fontSize='xl' fontWeight='bold'>
-                CorpFactory
-              </Text>
+              <img
+                src={ekpCorporationsLogo}
+                alt='Logo von EKP Corporations'
+                className={'ekpCorporationsLogo'}
+              />
             </Box>
             <HStack
               as={'nav'}
@@ -109,13 +118,14 @@ export function Header() {
             <Button
               as={Link}
               href='#'
-              bg={'brand.500'}
+              bg={'blue.700'}
               color={'white'}
               _hover={{
-                bg: 'brand.600',
+                bg: 'blue.500',
               }}
+              onClick={handleNavigation}
             >
-              Online Reservieren
+              Vorratsgesellschaft anfragen
             </Button>
           </Flex>
         </Flex>
@@ -130,7 +140,9 @@ export function Header() {
         >
           <DrawerOverlay />
           <DrawerContent>
-            <DrawerHeader onClick={handleLogoClick}>CorpFactory</DrawerHeader>
+            <DrawerHeader onClick={handleLogoClick}>
+              EKP Corporations
+            </DrawerHeader>
             <DrawerCloseButton sx={{ marginTop: 2, marginRight: 2 }} />
             <DrawerBody>
               <Stack as={'nav'} spacing={4}>

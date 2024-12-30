@@ -15,6 +15,7 @@ import {
   Divider,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 interface CardProps {
   title: string;
@@ -29,6 +30,7 @@ interface CardCarouselProps {
 export function CardCarousel({ cards }: CardCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const handleDotClick = (index: number) => {
     setCurrentIndex(index);
@@ -44,7 +46,11 @@ export function CardCarousel({ cards }: CardCarouselProps) {
 
   const bg = useColorModeValue('gray.50', 'gray.800');
   const color = useColorModeValue('gray.700', 'gray.200');
-  const accentColor = useColorModeValue('brand.500', 'brand.200');
+  const accentColor = useColorModeValue('blue.700', 'blue.700');
+
+  const handleNavigation = () => {
+    navigate('/contact');
+  };
 
   return (
     <Box bg={bg} color={color} p={4} borderRadius='md' boxShadow='lg'>
@@ -89,8 +95,10 @@ export function CardCarousel({ cards }: CardCarouselProps) {
 
               <CardFooter>
                 <HStack spacing={4}>
-                  <Button colorScheme='brand'>Jetzt reservieren</Button>
-                  <Button variant='outline' colorScheme='brand'>
+                  <Button colorScheme='blue' onClick={handleNavigation}>
+                    Jetzt anfragen
+                  </Button>
+                  <Button variant='outline' colorScheme='blue'>
                     Zur {card.title}
                   </Button>
                 </HStack>

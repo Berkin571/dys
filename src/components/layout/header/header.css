@@ -1,0 +1,10 @@
+.header-container {
+  height: 80px;
+  padding-top: 1rem;
+}
+
+.ekpCorporationsLogo {
+  /*clip-path: inset(25% 0 25% 0);*/
+  height: 72px;
+  margin-bottom: 0.75rem;
+}
