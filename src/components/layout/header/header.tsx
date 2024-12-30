@@ -14,6 +14,7 @@ import {
   DrawerHeader,
   DrawerBody,
   Button,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
@@ -53,6 +54,7 @@ export function Header() {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [scroll, setScroll] = useState(false);
+  const [isMobile] = useMediaQuery('(max-width: 768px)');
 
   const ekpCorporationsLogo = logo;
 
@@ -79,7 +81,9 @@ export function Header() {
     <>
       <Box
         bg={scroll ? 'white' : 'transparent'}
-        className={'header-container'}
+        className={
+          !isMobile ? 'header-container' : !scroll ? 'mobile-header' : ''
+        }
         px={4}
         position='sticky'
         top={0}

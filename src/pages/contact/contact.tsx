@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   FormControl,
+  FormHelperText,
   Input,
   Select,
   Textarea,
@@ -11,22 +12,30 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  Checkbox,
+  Stack,
 } from '@chakra-ui/react';
 import OfficePicture from '../../assets/office.jpg';
 import './contact.scss';
 
+// 1) Interface mit allen Feldern
 interface FormData {
-  [key: string]: string;
   anrede: string;
   titel: string;
   firstName: string;
   lastName: string;
   kanzleiFirma: string;
   email: string;
+  phone: string;
   message: string;
+  interestUg: boolean;
+  interestGmbH: boolean;
+  consent: boolean;
 }
 
+// 2) Hauptkomponente
 export function Contact() {
+  // 2.1) State anlegen mit allen Feldern
   const [formData, setFormData] = useState<FormData>({
     anrede: '',
     titel: '',
@@ -34,19 +43,33 @@ export function Contact() {
     lastName: '',
     kanzleiFirma: '',
     email: '',
+    phone: '',
     message: '',
+    interestUg: false,
+    interestGmbH: false,
+    consent: false,
   });
 
+  // 2.2) handleChange für alle Input-Typen
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    const { name, value, type } = e.target as HTMLInputElement;
+
+    if (type === 'checkbox') {
+      setFormData({
+        ...formData,
+        [name]: (e.target as HTMLInputElement).checked,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
+  // 2.3) handleSubmit mit EmailJS
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -57,7 +80,11 @@ export function Contact() {
       lastName: formData.lastName,
       kanzleiFirma: formData.kanzleiFirma,
       email: formData.email,
+      phone: formData.phone,
       message: formData.message,
+      interestUg: formData.interestUg ? 'UG' : 'Nein',
+      interestGmbH: formData.interestGmbH ? 'GmbH' : 'Nein',
+      consent: formData.consent ? 'Zugestimmt' : 'Nicht zugestimmt',
       reply_to: formData.email,
     };
 
@@ -82,14 +109,19 @@ export function Contact() {
     console.log(formData, '###');
   };
 
+  // 2.4) Farben für Light / Dark Mode
   const bg = useColorModeValue('gray.50', 'gray.800');
   const color = useColorModeValue('gray.700', 'gray.200');
 
+  // 3) Return mit JSX
   return (
     <>
+      {/* Obere Bildsektion */}
       <Box className='image-container'>
         <img src={OfficePicture} alt='Office' className='full-width-image' />
       </Box>
+
+      {/* Container für Formular */}
       <Box
         maxW={{ base: 'full', md: 'container.md' }}
         mx='auto'
@@ -108,30 +140,59 @@ export function Contact() {
           zu senden. Unser Team wird sich so schnell wie möglich bei Ihnen
           melden.
         </Text>
+
+        {/* Formularbeginn */}
         <Box as='form' onSubmit={handleSubmit}>
+          {/* 3.1) Checkboxen für UG / GmbH */}
+          <Stack direction={{ base: 'column', md: 'row' }} spacing={4} mb={4}>
+            <Checkbox
+              name='interestUg'
+              isChecked={formData.interestUg}
+              onChange={handleChange}
+            >
+              Ich interessiere mich für eine UG
+            </Checkbox>
+            <Checkbox
+              name='interestGmbH'
+              isChecked={formData.interestGmbH}
+              onChange={handleChange}
+            >
+              Ich interessiere mich für eine GmbH
+            </Checkbox>
+          </Stack>
+
+          {/* 3.2) Grid-Felder: Anrede, Titel, Vorname, Nachname, Kanzlei / Firma */}
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
+            {/* Anrede */}
             <FormControl id='anrede'>
               <Select
                 name='anrede'
-                placeholder='Anrede'
+                placeholder='Anrede auswählen'
                 value={formData.anrede}
                 onChange={handleChange}
               >
-                <option value=''>Anrede</option>
-                <option value='Herr'>Herr</option>
                 <option value='Frau'>Frau</option>
-                <option value='Dr.'>Dr.</option>
+                <option value='Herr'>Herr</option>
+                <option value='Divers'>Divers</option>
+                <option value='Firma'>Firma</option>
               </Select>
             </FormControl>
+
+            {/* Titel */}
             <FormControl id='titel'>
-              <Input
-                placeholder='Titel'
-                type='text'
+              <Select
                 name='titel'
+                placeholder='Titel (optional)'
                 value={formData.titel}
                 onChange={handleChange}
-              />
+              >
+                <option value='Dr.'>Dr.</option>
+                <option value='Prof.'>Prof.</option>
+                <option value='Prof. Dr.'>Prof. Dr.</option>
+              </Select>
             </FormControl>
+
+            {/* Vorname */}
             <FormControl id='firstName'>
               <Input
                 placeholder='Vorname'
@@ -141,6 +202,8 @@ export function Contact() {
                 onChange={handleChange}
               />
             </FormControl>
+
+            {/* Nachname */}
             <FormControl id='lastName'>
               <Input
                 placeholder='Nachname'
@@ -150,22 +213,23 @@ export function Contact() {
                 onChange={handleChange}
               />
             </FormControl>
+
+            {/* Kanzlei / Firma */}
             <FormControl
               id='kanzleiFirma'
               gridColumn={{ base: 'span 1', md: 'span 2' }}
             >
               <Input
-                placeholder='Kanzlei / Firma'
+                placeholder='Kanzlei / Firma (optional)'
                 type='text'
                 name='kanzleiFirma'
                 value={formData.kanzleiFirma}
                 onChange={handleChange}
               />
             </FormControl>
-            <FormControl
-              id='email'
-              gridColumn={{ base: 'span 1', md: 'span 2' }}
-            >
+
+            {/* E-Mail */}
+            <FormControl id='email'>
               <Input
                 placeholder='E-Mail Adresse*'
                 type='email'
@@ -175,6 +239,19 @@ export function Contact() {
                 required
               />
             </FormControl>
+
+            {/* Telefonnummer */}
+            <FormControl id='phone'>
+              <Input
+                placeholder='Telefonnummer (optional)'
+                type='tel'
+                name='phone'
+                value={formData.phone}
+                onChange={handleChange}
+              />
+            </FormControl>
+
+            {/* Nachricht */}
             <FormControl
               id='message'
               gridColumn={{ base: 'span 1', md: 'span 2' }}
@@ -188,7 +265,36 @@ export function Contact() {
               />
             </FormControl>
           </SimpleGrid>
-          <Button type='submit' colorScheme='blue' w='full' mt={4}>
+
+          {/* 3.3) Zustimmungserklärung: Checkbox + FormHelperText */}
+          <FormControl id='consent' mt={4}>
+            <Checkbox
+              name='consent'
+              isChecked={formData.consent}
+              onChange={handleChange}
+            >
+              Ich stimme zu, dass meine Angaben und Daten zur Bearbeitung meiner
+              Anfrage elektronisch erhoben und gespeichert werden. Sie können
+              Ihre Einwilligung jederzeit für die Zukunft per E-Mail an{' '}
+              <span style={{ color: '#3075b6' }}>info@ekp-corporations.de</span>{' '}
+              widerrufen.
+            </Checkbox>
+            {!formData.consent && (
+              <FormHelperText color='red.500'>
+                Bitte bestätigen Sie die Einwilligung zur Datenverarbeitung,
+                bevor Sie absenden.
+              </FormHelperText>
+            )}
+          </FormControl>
+
+          {/* 3.4) Submit-Button: inaktiv, wenn consent nicht gegeben */}
+          <Button
+            type='submit'
+            colorScheme='blue'
+            w='full'
+            mt={4}
+            isDisabled={!formData.consent}
+          >
             Absenden
           </Button>
         </Box>
