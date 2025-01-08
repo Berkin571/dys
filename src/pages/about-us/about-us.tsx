@@ -14,7 +14,7 @@ import image from '../../assets/ueber_ekp_corporation.jpg';
 export function AboutUs() {
   const bg = useColorModeValue('gray.50', 'gray.800');
   const color = useColorModeValue('gray.700', 'gray.200');
-  const accentColor = useColorModeValue('blue.700', 'blue.700');
+  const accentColor = 'var(--primary)';
 
   return (
     <>
@@ -86,7 +86,7 @@ export function AboutUs() {
             </Heading>
             <VStack align='start'>
               <HStack className='h-stack' sx={{ marginTop: '0rem !important' }}>
-                <Icon as={CheckCircleIcon} color='blue.700' />
+                <Icon as={CheckCircleIcon} color={accentColor} />
                 <Text>
                   <strong>Schnelligkeit:</strong> Mit unseren
                   Vorratsgesellschaften können Sie innerhalb weniger Stunden
@@ -94,7 +94,7 @@ export function AboutUs() {
                 </Text>
               </HStack>
               <HStack className='h-stack'>
-                <Icon as={CheckCircleIcon} color='blue.700' />
+                <Icon as={CheckCircleIcon} color={accentColor} />
                 <Text>
                   <strong>Sicherheit:</strong> Alle unsere Gesellschaften sind
                   frei von Verbindlichkeiten und haben keine Geschäftstätigkeit
@@ -103,7 +103,7 @@ export function AboutUs() {
                 </Text>
               </HStack>
               <HStack className='h-stack'>
-                <Icon as={CheckCircleIcon} color='blue.700' />
+                <Icon as={CheckCircleIcon} color={accentColor} />
                 <Text>
                   <strong>Erfahrung:</strong> Profitieren Sie von unserer
                   langjährigen Erfahrung und unserem umfassenden Wissen im
@@ -111,7 +111,7 @@ export function AboutUs() {
                 </Text>
               </HStack>
               <HStack className='h-stack'>
-                <Icon as={CheckCircleIcon} color='blue.700' />
+                <Icon as={CheckCircleIcon} color={accentColor} />
                 <Text>
                   <strong>Kundensupport:</strong> Unser freundliches und
                   kompetentes Team steht Ihnen bei jedem Schritt zur Seite und

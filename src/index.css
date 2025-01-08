@@ -3,3 +3,10 @@
     overflow: hidden;
     margin-bottom: 2rem;
 }
+
+:root {
+    --primary: #0d298d;
+    --primary-hover: rgba(13,41,141,0.89);
+
+    --primary-white: #ffffff;
+}

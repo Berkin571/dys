@@ -1,18 +1,20 @@
 .full-width-image {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    object-fit: cover;
-    clip-path: inset(0% 0 10% 0);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
+  width: 100%;
+  height: auto;
+  object-fit: cover;                /* Füllt den Container, behält aber das Seitenverhältnis bei */
+  clip-path: inset(100% 0 10% 0);     /* Optional: Beschneiden des unteren Bereichs */
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: block;                   /* Vermeidet kleine Lücken (whitespace) unter dem Bild */
+}
 
-  @media (max-width: 768px) {
-    .full-width-image {
-      height: 165px !important;
-    }
+
+@media (max-width: 768px) {
+  .full-width-image {
+    max-height: 165px;             /* Feste maximale Höhe auf Mobile */
+    clip-path: inset(0% 0 8% 0);   /* Leicht angepasstes Zuschneiden, optional */
   }
+}
 
 .faq {
   margin-top: 1rem;

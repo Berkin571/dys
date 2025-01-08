@@ -122,10 +122,10 @@ export function Header() {
             <Button
               as={Link}
               href='#'
-              bg={'blue.700'}
-              color={'white'}
+              bg={'var(--primary)'}
+              color={'var(--primary-white)'}
               _hover={{
-                bg: 'blue.500',
+                bg: 'var(--primary-hover)',
               }}
               onClick={handleNavigation}
             >
