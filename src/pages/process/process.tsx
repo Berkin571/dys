@@ -26,7 +26,7 @@ import { BsBank } from 'react-icons/bs';
 import { RiServiceFill } from 'react-icons/ri';
 import { TbFlagStar } from 'react-icons/tb';
 
-import image from '../../assets/process.jpg';
+import process from '../../assets/ablauf.jpeg';
 
 import './process.scss';
 
@@ -38,7 +38,7 @@ export function Process() {
   return (
     <>
       <Box className='image-container'>
-        <Image src={image} alt='Ablauf' className='full-width-image' />
+        <Image src={process} alt='Ablauf' className='full-width-image' />
       </Box>
       <Box
         className='ablauf'

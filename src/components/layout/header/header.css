@@ -1,20 +1,29 @@
 .header-container {
-  height: 85px;
+  position: fixed; /* Fixiert den Header beim Scrollen */
+  top: 0; /* Immer oben anheften */
+  left: 0;
+  width: 100%;
+  height: 80px;
   padding-top: 1rem;
+  background-color: white; /* Hintergrundfarbe für Klarheit */
+  z-index: 1000; /* Sicherstellen, dass der Header immer sichtbar ist */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Schatten für mehr Tiefe */
 }
 
 .ekpCorporationsLogo {
-  height: 72px;
-  margin-bottom: 0.75rem;
+  height: 65px;
+  margin-bottom: 0.7rem;
+  transition: height 0.3s ease, margin-bottom 0.3s ease; /* Sanfter Übergang bei Größenänderungen */
 }
 
 @media (max-width: 768px) {
   .header-container {
     padding-top: 0;
+    height: 85px; /* Höhe für mobile Geräte anpassen */
   }
 
-  .mobile-header {
-    height: 85px;
-    padding-top: 0;
+  .ekpCorporationsLogo {
+    height: 60px; /* Logo an die mobile Höhe anpassen */
+    margin-bottom: 0; /* Platz minimieren */
   }
 }

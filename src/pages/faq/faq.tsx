@@ -11,20 +11,21 @@ import {
 
 import './faq.scss';
 
-import Image from '../../assets/faq.jpg';
+import faq from '../../assets/faq.jpg';
+import { Banner } from '../../components';
 
 export function FAQ() {
   const bg = useColorModeValue('gray.50', 'gray.800');
   const color = useColorModeValue('gray.700', 'gray.200');
   const accentColor = useColorModeValue('blue.700', 'blue.700');
 
-  const faqImage = Image;
+  const faqImage = faq;
 
   return (
     <>
-      <Box className='image-container'>
-        <img src={faqImage} alt='FAQ' className='full-width-image' />
-      </Box>
+      <Banner>
+        <img src={faqImage} alt='About Us' className='full-width-image ' />
+      </Banner>
       <Box
         className='faq'
         bg={bg}

@@ -2,4 +2,4 @@
 export { Header, Footer } from './layout';
 
 // ui
-export { CardCarousel } from './ui';
+export { CardCarousel, Banner } from './ui';

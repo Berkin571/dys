@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, ReactNode } from 'react';
 import {
   Box,
   Flex,
@@ -19,7 +19,7 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 import './header.css';
-import logo from '../../../assets/logo_schmal_2.png';
+import logo from '../../../assets/image.png';
 
 const Links = [
   { name: 'Über EKP Corporations', url: '/about-us' },
@@ -30,7 +30,7 @@ const Links = [
 ];
 
 type NavLinkType = {
-  children: React.ReactNode;
+  children: ReactNode;
   url: string;
 };
 

@@ -1,13 +1,9 @@
-.image-container {
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 2rem;
-
-  .full-width-image {
+.full-width-image {
     width: 100%;
     height: auto;
     max-height: 300px;
     object-fit: cover;
+    clip-path: inset(0% 0 10% 0);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
@@ -17,7 +13,6 @@
       height: 165px !important;
     }
   }
-}
 
 .faq {
   margin-top: 1rem;

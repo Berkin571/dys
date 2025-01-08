@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import './about-us.scss';
-import image from '../../assets/aboutus.jpg';
+import image from '../../assets/ueber_ekp_corporation.jpg';
 
 export function AboutUs() {
   const bg = useColorModeValue('gray.50', 'gray.800');

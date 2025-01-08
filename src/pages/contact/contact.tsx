@@ -15,7 +15,7 @@ import {
   Checkbox,
   Stack,
 } from '@chakra-ui/react';
-import OfficePicture from '../../assets/office.jpg';
+import contact from '../../assets/contact.jpeg';
 import './contact.scss';
 
 // 1) Interface mit allen Feldern
@@ -118,7 +118,7 @@ export function Contact() {
     <>
       {/* Obere Bildsektion */}
       <Box className='image-container'>
-        <img src={OfficePicture} alt='Office' className='full-width-image' />
+        <img src={contact} alt='Office' className='full-width-image' />
       </Box>
 
       {/* Container für Formular */}
