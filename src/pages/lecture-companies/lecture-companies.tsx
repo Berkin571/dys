@@ -1,7 +1,12 @@
-import { Box, Container, Heading, Image, Text } from '@chakra-ui/react';
-import { CardCarousel } from '../../components';
+import {
+  CardCarousel,
+  ContainerComponent,
+  FullWidthImage,
+  TextComponent,
+  Title,
+} from '../../components';
 import lectureCompanies from '../../assets/vorratsgesellschaften.jpg';
-
+import './lecture-comanies.scss';
 export function LectureCompanies() {
   const cardData = [
     {
@@ -18,19 +23,11 @@ export function LectureCompanies() {
 
   return (
     <>
-      <Box className='image-container'>
-        <Image
-          src={lectureCompanies}
-          alt='Ablauf'
-          className='full-width-image'
-        />
-      </Box>
-      <Container maxW='container.lg' py={10}>
-        <Heading as='h2' size='xl' mb={6}>
-          Vorratsgesellschaften im Überblick
-        </Heading>
+      <FullWidthImage src={lectureCompanies} alt='Ablauf' yOffset='60%' />
+      <ContainerComponent className='lectureCompanie'>
+        <Title label='Vorratsgesellschaften im Überblick' />
 
-        <Text mb={8} fontSize='lg' lineHeight='tall'>
+        <TextComponent>
           Alle unsere Vorratsgesellschaften wurden ordnungsgemäß gegründet, sind
           im Handelsregister eingetragen und haben keine Geschäftstätigkeit
           aufgenommen. Das jeweilige satzungsmäßige Stammkapital jeder
@@ -38,10 +35,10 @@ export function LectureCompanies() {
           Gesellschaft verfügt über ein übernahmefähiges Bankkonto, das nach
           erfolgreicher Umschreibung auf die neue Geschäftsführung
           uneingeschränkt als Geschäftskonto genutzt werden kann.
-        </Text>
+        </TextComponent>
 
         <CardCarousel cards={cardData} />
-      </Container>
+      </ContainerComponent>
     </>
   );
 }

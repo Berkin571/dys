@@ -1,46 +1,25 @@
-.full-width-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;                /* Füllt den Container, behält aber das Seitenverhältnis bei */
-  clip-path: inset(100% 0 10% 0);     /* Optional: Beschneiden des unteren Bereichs */
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  display: block;                   /* Vermeidet kleine Lücken (whitespace) unter dem Bild */
-}
-
-
-@media (max-width: 768px) {
-  .full-width-image {
-    max-height: 165px;             /* Feste maximale Höhe auf Mobile */
-    clip-path: inset(0% 0 8% 0);   /* Leicht angepasstes Zuschneiden, optional */
-  }
-}
-
 .faq {
-  margin-top: 1rem;
-  background-color: #f7fafc;
+  margin-top: var(--margin);
+  background-color: var(--bg-layer);
   color: #2d3748;
   border-radius: 5px;
   box-shadow: var(--chakra-shadows-lg);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: #1a202c;
-    color: #e2e8f0;
-  }
+  padding: var(--padding);
+  margin-bottom: var(--margin-lg);
 
   .chakra-accordion__item {
     border-bottom: 1px solid #0f3f6c;
   }
 
   .chakra-accordion__button {
-    padding: 1rem;
+    padding: var(--padding);
     font-weight: bold;
     background-color: inherit;
     border-radius: 5px;
   }
 
   .chakra-accordion__panel {
-    padding: 1rem;
+    padding: var(--padding);
     border-left: 4px solid #0f3f6c;
     background-color: inherit;
     margin: 0.25rem 0 0;

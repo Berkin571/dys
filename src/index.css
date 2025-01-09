@@ -1,12 +1,12 @@
-.image-container {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 2rem;
-}
-
 :root {
-    --primary: #0d298d;
-    --primary-hover: rgba(13,41,141,0.89);
+  --primary: #0d298d;
+  --primary-hover: rgba(13, 41, 141, 0.89);
+  --primary-white: #ffffff;
+  --bg-layer: #f7fafc;
 
-    --primary-white: #ffffff;
+  --margin: 1rem;
+  --margin-lg: 2rem;
+
+  --padding: 1rem;
+  --padding-lg: 2rem;
 }

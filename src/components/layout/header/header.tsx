@@ -96,14 +96,19 @@ export function Header() {
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
+            backgroundColor={'var(--primary)'}
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box display={{ base: 'none', md: 'block' }}>
+            <Box
+              display={{ base: 'none', md: 'block' }}
+              onClick={handleLogoClick}
+              cursor='pointer'
+            >
               <img
                 src={ekpCorporationsLogo}
                 alt='Logo von EKP Corporations'
-                className={'ekpCorporationsLogo'}
+                className='ekpCorporationsLogo'
               />
             </Box>
             <HStack

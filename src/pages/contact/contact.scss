@@ -1,56 +1,25 @@
-.image-container {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 2rem;
-  
-    .full-width-image {
-      width: 100%;
-      height: auto;
-      max-height: 300px;
-      object-fit: cover;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-    }
-  
-    @media (max-width: 768px) {
-      .full-width-image {
-        max-height: 165px;
-      }
-    }
+.contact {
+  margin-top: var(--margin);
+  margin-bottom: var(--margin-lg);
+  background-color: var(--bg-layer);
+  color: #2d3748;
+  border-radius: 5px;
+  box-shadow: var(--chakra-shadows-lg);
+  padding: var(--padding);
+
+  .chakra-text {
+    margin-bottom: 1rem;
   }
-  
-  .contact {
-    background-color: #f7fafc; 
-    color: #2d3748;
-  
-    @media (prefers-color-scheme: dark) {
-      background-color: #1a202c;
-      color: #e2e8f0;
-    }
-  
-    .chakra-heading {
-      margin-bottom: 1rem;
-    }
-  
-    .chakra-text {
-      margin-bottom: 1rem;
-    }
-  
-    .chakra-stack {
-      margin-top: 2rem;
-    }
-  
-    .chakra-icon {
-      margin-right: 0.5rem;
-    }
-  
-    strong {
-      color: #319795; 
-    }
-  
-    h2 {
-      border-left: 4px solid #319795; 
-      padding-left: 0.5rem;
-    }
+
+  .chakra-stack {
+    margin-top: 2rem;
   }
-  
+
+  .chakra-icon {
+    margin-right: 0.5rem;
+  }
+
+  strong {
+    color: #319795;
+  }
+}

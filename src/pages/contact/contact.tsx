@@ -9,16 +9,18 @@ import {
   Select,
   Textarea,
   SimpleGrid,
-  Heading,
-  Text,
-  useColorModeValue,
   Checkbox,
   Stack,
 } from '@chakra-ui/react';
+import {
+  FullWidthImage,
+  ContainerComponent,
+  Title,
+  TextComponent,
+} from '../../components';
 import contact from '../../assets/contact.jpeg';
 import './contact.scss';
 
-// 1) Interface mit allen Feldern
 interface FormData {
   anrede: string;
   titel: string;
@@ -33,9 +35,7 @@ interface FormData {
   consent: boolean;
 }
 
-// 2) Hauptkomponente
 export function Contact() {
-  // 2.1) State anlegen mit allen Feldern
   const [formData, setFormData] = useState<FormData>({
     anrede: '',
     titel: '',
@@ -50,12 +50,10 @@ export function Contact() {
     consent: false,
   });
 
-  // 2.2) handleChange für alle Input-Typen
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     const { name, value, type } = e.target as HTMLInputElement;
-
     if (type === 'checkbox') {
       setFormData({
         ...formData,
@@ -69,7 +67,6 @@ export function Contact() {
     }
   };
 
-  // 2.3) handleSubmit mit EmailJS
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -109,41 +106,20 @@ export function Contact() {
     console.log(formData, '###');
   };
 
-  // 2.4) Farben für Light / Dark Mode
-  const bg = useColorModeValue('gray.50', 'gray.800');
-  const color = useColorModeValue('gray.700', 'gray.200');
-
-  // 3) Return mit JSX
   return (
     <>
-      {/* Obere Bildsektion */}
-      <Box className='image-container'>
-        <img src={contact} alt='Office' className='full-width-image' />
-      </Box>
+      <FullWidthImage src={contact} alt='Office' yOffset='78%' />
+      <ContainerComponent className='contact'>
+        <Title label='Senden Sie uns eine Anfrage' />
 
-      {/* Container für Formular */}
-      <Box
-        maxW={{ base: 'full', md: 'container.md' }}
-        mx='auto'
-        borderRadius='md'
-        bg={bg}
-        color={color}
-        p={5}
-        boxShadow='lg'
-      >
-        <Heading as='h1' size='2xl' textAlign='center' mb={6}>
-          Senden Sie uns eine Anfrage
-        </Heading>
-        <Text fontSize='lg' mb={6} textAlign='center'>
+        <TextComponent marginRight>
           Möchten Sie eine Vorratsgesellschaft kaufen oder haben Sie noch
           Fragen? Füllen Sie das untenstehende Formular aus, um uns eine Anfrage
           zu senden. Unser Team wird sich so schnell wie möglich bei Ihnen
           melden.
-        </Text>
+        </TextComponent>
 
-        {/* Formularbeginn */}
         <Box as='form' onSubmit={handleSubmit}>
-          {/* 3.1) Checkboxen für UG / GmbH */}
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4} mb={4}>
             <Checkbox
               name='interestUg'
@@ -161,9 +137,7 @@ export function Contact() {
             </Checkbox>
           </Stack>
 
-          {/* 3.2) Grid-Felder: Anrede, Titel, Vorname, Nachname, Kanzlei / Firma */}
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
-            {/* Anrede */}
             <FormControl id='anrede'>
               <Select
                 name='anrede'
@@ -178,7 +152,6 @@ export function Contact() {
               </Select>
             </FormControl>
 
-            {/* Titel */}
             <FormControl id='titel'>
               <Select
                 name='titel'
@@ -192,7 +165,6 @@ export function Contact() {
               </Select>
             </FormControl>
 
-            {/* Vorname */}
             <FormControl id='firstName'>
               <Input
                 placeholder='Vorname'
@@ -203,7 +175,6 @@ export function Contact() {
               />
             </FormControl>
 
-            {/* Nachname */}
             <FormControl id='lastName'>
               <Input
                 placeholder='Nachname'
@@ -214,7 +185,6 @@ export function Contact() {
               />
             </FormControl>
 
-            {/* Kanzlei / Firma */}
             <FormControl
               id='kanzleiFirma'
               gridColumn={{ base: 'span 1', md: 'span 2' }}
@@ -228,7 +198,6 @@ export function Contact() {
               />
             </FormControl>
 
-            {/* E-Mail */}
             <FormControl id='email'>
               <Input
                 placeholder='E-Mail Adresse*'
@@ -240,7 +209,6 @@ export function Contact() {
               />
             </FormControl>
 
-            {/* Telefonnummer */}
             <FormControl id='phone'>
               <Input
                 placeholder='Telefonnummer (optional)'
@@ -251,7 +219,6 @@ export function Contact() {
               />
             </FormControl>
 
-            {/* Nachricht */}
             <FormControl
               id='message'
               gridColumn={{ base: 'span 1', md: 'span 2' }}
@@ -266,7 +233,6 @@ export function Contact() {
             </FormControl>
           </SimpleGrid>
 
-          {/* 3.3) Zustimmungserklärung: Checkbox + FormHelperText */}
           <FormControl id='consent' mt={4}>
             <Checkbox
               name='consent'
@@ -287,7 +253,6 @@ export function Contact() {
             )}
           </FormControl>
 
-          {/* 3.4) Submit-Button: inaktiv, wenn consent nicht gegeben */}
           <Button
             type='submit'
             colorScheme='blue'
@@ -298,8 +263,7 @@ export function Contact() {
             Absenden
           </Button>
         </Box>
-      </Box>
-      <br />
+      </ContainerComponent>
     </>
   );
 }

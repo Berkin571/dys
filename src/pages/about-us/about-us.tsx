@@ -1,53 +1,38 @@
-import {
-  Box,
-  Heading,
-  Text,
-  VStack,
-  HStack,
-  Icon,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Box, Heading, VStack, HStack, Icon } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
+import {
+  Title,
+  ContainerComponent,
+  FullWidthImage,
+  TextComponent,
+} from '../../components';
+import aboutUsImage from '../../assets/ueber_ekp_corporation.jpg';
 import './about-us.scss';
-import image from '../../assets/ueber_ekp_corporation.jpg';
 
 export function AboutUs() {
-  const bg = useColorModeValue('gray.50', 'gray.800');
-  const color = useColorModeValue('gray.700', 'gray.200');
   const accentColor = 'var(--primary)';
 
   return (
     <>
-      <Box className='image-container'>
-        <img src={image} alt='About Us' className='full-width-image' />
-      </Box>
-      <Box
-        className='about-us'
-        bg={bg}
-        color={color}
-        p={{ base: 4, md: 8 }}
-        borderRadius='lg'
-        boxShadow='lg'
-      >
+      <FullWidthImage src={aboutUsImage} alt='About Us' yOffset='60%' />
+      <ContainerComponent className='about-us'>
+        <Title label='EKP Corporations – Ihr Experte für Vorratsgesellschaften' />
+
+        <TextComponent>
+          Willkommen bei EKP Corporations, Ihrem Partner für den Erwerb von
+          Vorratsgesellschaften. Wir sind spezialisiert auf den Vertrieb
+          vorgegründeter Gesellschaften, insbesondere von
+          Unternehmergesellschaften (UG) und Gesellschaften mit beschränkter
+          Haftung (GmbH), die Ihnen einen schnellen und unkomplizierten Einstieg
+          in die Geschäftswelt ermöglichen.
+        </TextComponent>
+
         <VStack spacing={8} align='stretch'>
-          <Heading as='h1' size='xl' textAlign='center'>
-            EKP Corporations – Ihr Experte für Vorratsgesellschaften
-          </Heading>
-
-          <Text fontSize='lg' textAlign='center'>
-            Willkommen bei EKP Corporations, Ihrem Partner für den Erwerb von
-            Vorratsgesellschaften. Wir sind spezialisiert auf den Vertrieb
-            vorgegründeter Gesellschaften, insbesondere von
-            Unternehmergesellschaften (UG) und Gesellschaften mit beschränkter
-            Haftung (GmbH), die Ihnen einen schnellen und unkomplizierten
-            Einstieg in die Geschäftswelt ermöglichen.
-          </Text>
-
           <Box>
             <Heading as='h2' size='lg' mb={4} color={accentColor}>
               Wer wir sind
             </Heading>
-            <Text>
+            <TextComponent mb={2}>
               Bei EKP Corporations steht Kundenzufriedenheit an erster Stelle.
               Unser erfahrenes Team besteht aus Experten im Bereich
               Unternehmensgründung und -verwaltung. Mit unserem umfassenden
@@ -56,14 +41,14 @@ export function AboutUs() {
               unterstützen wir Unternehmer, Investoren und Gründer dabei,
               schnell mit einer passenden Vorratsgesellschaft unternehmerisch
               handlungsfähig zu werden.
-            </Text>
+            </TextComponent>
           </Box>
 
           <Box>
-            <Heading as='h2' size='lg' mb={4} color={accentColor}>
+            <Heading as='h2' size='lg' mb={3} color={accentColor}>
               Was wir tun
             </Heading>
-            <Text>
+            <TextComponent mb={2}>
               Unsere Vorratsgesellschaften sind bereits gegründet und im
               Handelsregister eingetragen, jedoch noch nicht operativ tätig
               gewesen. Dies bietet Ihnen den Vorteil, sofort handlungsfähig zu
@@ -72,7 +57,7 @@ export function AboutUs() {
               Unternehmergesellschaften (UG) und Gesellschaften mit beschränkter
               Haftung (GmbH) spezialisiert und können Ihnen Lösungen anbieten,
               die auf Ihre spezifischen Bedürfnisse zugeschnitten sind.
-            </Text>
+            </TextComponent>
           </Box>
 
           <Box>
@@ -85,55 +70,55 @@ export function AboutUs() {
               Warum wir?
             </Heading>
             <VStack align='start'>
-              <HStack className='h-stack' sx={{ marginTop: '0rem !important' }}>
+              <HStack>
                 <Icon as={CheckCircleIcon} color={accentColor} />
-                <Text>
+                <TextComponent mb={1}>
                   <strong>Schnelligkeit:</strong> Mit unseren
                   Vorratsgesellschaften können Sie innerhalb weniger Stunden
                   eine voll funktionsfähige Gesellschaft erwerben.
-                </Text>
+                </TextComponent>
               </HStack>
-              <HStack className='h-stack'>
+              <HStack>
                 <Icon as={CheckCircleIcon} color={accentColor} />
-                <Text>
+                <TextComponent mb={1}>
                   <strong>Sicherheit:</strong> Alle unsere Gesellschaften sind
                   frei von Verbindlichkeiten und haben keine Geschäftstätigkeit
                   aufgenommen. Das jeweilige Stammkapital der Gesellschaft ist
                   zum Zeitpunkt des Verkaufs voll eingezahlt.
-                </Text>
+                </TextComponent>
               </HStack>
-              <HStack className='h-stack'>
+              <HStack>
                 <Icon as={CheckCircleIcon} color={accentColor} />
-                <Text>
+                <TextComponent mb={1}>
                   <strong>Erfahrung:</strong> Profitieren Sie von unserer
                   langjährigen Erfahrung und unserem umfassenden Wissen im
                   Bereich der Unternehmensgründung.
-                </Text>
+                </TextComponent>
               </HStack>
-              <HStack className='h-stack'>
+              <HStack>
                 <Icon as={CheckCircleIcon} color={accentColor} />
-                <Text>
+                <TextComponent mb={1}>
                   <strong>Kundensupport:</strong> Unser freundliches und
                   kompetentes Team steht Ihnen bei jedem Schritt zur Seite und
                   beantwortet alle Ihre Fragen.
-                </Text>
+                </TextComponent>
               </HStack>
             </VStack>
           </Box>
 
-          <Box sx={{ marginTop: '1.5rem' }}>
+          <Box>
             <Heading as='h2' size='lg' mb={4} color={accentColor}>
               Unsere Mission
             </Heading>
-            <Text>
+            <TextComponent mb={2}>
               Unsere Mission ist es, Ihnen den Weg zur Handlungsfähigkeit mit
               einer UG oder GmbH zu erleichtern und Ihnen eine solide Basis für
               den Geschäftserfolg zu bieten. Mit unseren Vorratsgesellschaften
               legen Sie den Grundstein für Ihre unternehmerische Tätigkeit.
-            </Text>
+            </TextComponent>
           </Box>
         </VStack>
-      </Box>
+      </ContainerComponent>
     </>
   );
 }

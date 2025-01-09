@@ -1,56 +1,29 @@
 import {
-  Box,
-  Heading,
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  useColorModeValue,
+  Text,
 } from '@chakra-ui/react';
-
-import './faq.scss';
-
+import { FullWidthImage, ContainerComponent, Title } from '../../components';
 import faq from '../../assets/faq.jpg';
-import { Banner } from '../../components';
+import './faq.scss';
+import { Link } from 'react-router-dom';
 
 export function FAQ() {
-  const bg = useColorModeValue('gray.50', 'gray.800');
-  const color = useColorModeValue('gray.700', 'gray.200');
-  const accentColor = useColorModeValue('blue.700', 'blue.700');
-
-  const faqImage = faq;
-
   return (
     <>
-      <Banner>
-        <img src={faqImage} alt='About Us' className='full-width-image ' />
-      </Banner>
-      <Box
-        className='faq'
-        bg={bg}
-        color={color}
-        maxW={{ base: 'full', md: 'container.md' }}
-        mx='auto'
-        borderRadius='5px'
-        boxShadow='lg'
-        p={{ base: 4, md: 8 }}
-      >
-        <Heading
-          as='h1'
-          size='2xl'
-          textAlign='center'
-          mb={6}
-          color={accentColor}
-        >
-          Antworten auf Ihre Fragen
-        </Heading>
+      <FullWidthImage src={faq} alt='FAQ' yOffset='45%' />
+      <ContainerComponent className='faq'>
+        <Title label='Antworten auf Ihre Fragen' />
+
         <Accordion allowMultiple>
           <AccordionItem>
             <AccordionButton>
-              <Box flex='1' textAlign='left'>
+              <Text flex='1' textAlign='left'>
                 Was ist eine Vorratsgesellschaft?
-              </Box>
+              </Text>
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
@@ -60,12 +33,11 @@ export function FAQ() {
               ermöglichen.
             </AccordionPanel>
           </AccordionItem>
-
           <AccordionItem>
             <AccordionButton>
-              <Box flex='1' textAlign='left'>
+              <Text flex='1' textAlign='left'>
                 Welche Arten von Vorratsgesellschaften bieten Sie an?
-              </Box>
+              </Text>
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
@@ -73,12 +45,11 @@ export function FAQ() {
               spezialisiert.
             </AccordionPanel>
           </AccordionItem>
-
           <AccordionItem>
             <AccordionButton>
-              <Box flex='1' textAlign='left'>
+              <Text flex='1' textAlign='left'>
                 Sind Ihre Vorratsgesellschaften schuldenfrei?
-              </Box>
+              </Text>
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
@@ -86,12 +57,11 @@ export function FAQ() {
               Verbindlichkeiten und haben keine Geschäftstätigkeit aufgenommen.
             </AccordionPanel>
           </AccordionItem>
-
           <AccordionItem>
             <AccordionButton>
-              <Box flex='1' textAlign='left'>
+              <Text flex='1' textAlign='left'>
                 Verfügen die Vorratsgesellschaften über ein Bankkonto?
-              </Box>
+              </Text>
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
@@ -109,12 +79,11 @@ export function FAQ() {
               vollzogen werden kann.
             </AccordionPanel>
           </AccordionItem>
-
           <AccordionItem>
             <AccordionButton>
-              <Box flex='1' textAlign='left'>
+              <Text flex='1' textAlign='left'>
                 Wie lange dauert der Erwerb einer Vorratsgesellschaft?
-              </Box>
+              </Text>
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
@@ -128,13 +97,12 @@ export function FAQ() {
               darauf an.
             </AccordionPanel>
           </AccordionItem>
-
           <AccordionItem>
             <AccordionButton>
-              <Box flex='1' textAlign='left'>
+              <Text flex='1' textAlign='left'>
                 Welche Dokumente benötige ich für den Erwerb einer
                 Vorratsgesellschaft?
-              </Box>
+              </Text>
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
@@ -147,12 +115,11 @@ export function FAQ() {
               Informationen und Nachweise zu Ihrem Aufenthaltsstatus.
             </AccordionPanel>
           </AccordionItem>
-
           <AccordionItem>
             <AccordionButton>
-              <Box flex='1' textAlign='left'>
+              <Text flex='1' textAlign='left'>
                 Bieten Sie Unterstützung nach dem Erwerb der Gesellschaft an?
-              </Box>
+              </Text>
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
@@ -160,8 +127,22 @@ export function FAQ() {
               für alle Fragen und Unterstützung zur Verfügung.
             </AccordionPanel>
           </AccordionItem>
+          <AccordionItem>
+            <AccordionButton>
+              <Text flex='1' textAlign='left'>
+                Sonstige
+              </Text>
+              <AccordionIcon />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              <Link to={'/contact'}>
+                Senden Sie uns eine Nachricht. Wir beantworten gerne all Ihre
+                Fragen.
+              </Link>
+            </AccordionPanel>
+          </AccordionItem>
         </Accordion>
-      </Box>
+      </ContainerComponent>
     </>
   );
 }

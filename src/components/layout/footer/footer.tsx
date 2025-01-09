@@ -15,7 +15,7 @@ import './footer.scss';
 export function Footer() {
   const bg = useColorModeValue('gray.50', 'gray.800');
   const color = useColorModeValue('gray.700', 'gray.200');
-  const accentColor = useColorModeValue('blue.700', 'blue.700');
+  const accentColor = 'var(--primary)';
 
   return (
     <Box bg={bg} color={color} py={10}>
@@ -54,7 +54,7 @@ export function Footer() {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Text>© 2024 EKP Corporations. Alle Rechte vorbehalten.</Text>
+          <Text>© 2025 EKP Corporations. Alle Rechte vorbehalten.</Text>
           <Stack direction='row' spacing={6}>
             <IconButton
               as='a'
@@ -63,7 +63,7 @@ export function Footer() {
               icon={<FaTwitter />}
               bg={accentColor}
               color='white'
-              _hover={{ bg: useColorModeValue('blue.600', 'blue.400') }}
+              _hover={{ bg: 'var(--primary-hover)' }}
             />
             <IconButton
               as='a'
@@ -72,7 +72,7 @@ export function Footer() {
               icon={<FaFacebook />}
               bg={accentColor}
               color='white'
-              _hover={{ bg: useColorModeValue('blue.600', 'blue.400') }}
+              _hover={{ bg: 'var(--primary-hover)' }}
             />
             <IconButton
               as='a'
@@ -81,7 +81,7 @@ export function Footer() {
               icon={<FaInstagram />}
               bg={accentColor}
               color='white'
-              _hover={{ bg: useColorModeValue('blue.600', 'blue.400') }}
+              _hover={{ bg: 'var(--primary-hover)' }}
             />
           </Stack>
         </Container>

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
   Box,
   Text,
@@ -44,9 +44,33 @@ export function CardCarousel({ cards }: CardCarouselProps) {
     }
   };
 
+  const updateCurrentIndex = () => {
+    if (scrollRef.current) {
+      const scrollLeft = scrollRef.current.scrollLeft;
+      const cardWidth = scrollRef.current.scrollWidth / cards.length;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      if (newIndex !== currentIndex) {
+        setCurrentIndex(newIndex);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const scrollElement = scrollRef.current;
+    if (scrollElement) {
+      scrollElement.addEventListener('scroll', updateCurrentIndex);
+    }
+    return () => {
+      if (scrollElement) {
+        scrollElement.removeEventListener('scroll', updateCurrentIndex);
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex]);
+
   const bg = useColorModeValue('gray.50', 'gray.800');
   const color = useColorModeValue('gray.700', 'gray.200');
-  const accentColor = useColorModeValue('blue.700', 'blue.700');
+  const accentColor = 'var(--primary)';
 
   const handleNavigation = () => {
     navigate('/contact');
@@ -56,13 +80,13 @@ export function CardCarousel({ cards }: CardCarouselProps) {
     <Box bg={bg} color={color} p={4} borderRadius='md' boxShadow='lg'>
       <VStack spacing={4} align='stretch'>
         <Box
-          display='flex'
-          overflowX='auto'
+          display={{ base: 'flex', md: 'grid' }}
+          gridTemplateColumns={{ base: 'none', md: '1fr 1fr' }}
+          gap={4}
+          overflowX={{ base: 'auto', md: 'visible' }}
           ref={scrollRef}
           css={{
-            '&::-webkit-scrollbar': {
-              display: 'none',
-            },
+            '&::-webkit-scrollbar': { display: 'none' },
             '-ms-overflow-style': 'none',
             'scrollbar-width': 'none',
           }}
@@ -74,8 +98,8 @@ export function CardCarousel({ cards }: CardCarouselProps) {
               borderColor={accentColor}
               borderRadius='md'
               boxShadow='md'
-              minW={{ base: '95%', md: '300px' }}
-              m={2}
+              flex={{ base: '0 0 80%', md: '1' }}
+              maxWidth={{ base: '80%', md: '100%' }}
               as={motion.div}
               whileHover={{ boxShadow: '0px 5px 7px rgba(0, 0, 0, 0.2)' }}
               initial={{ scale: 0.9 }}
@@ -92,13 +116,27 @@ export function CardCarousel({ cards }: CardCarouselProps) {
                 <Divider my={2} />
                 <Text>{card.description}</Text>
               </CardBody>
-
               <CardFooter>
                 <HStack spacing={4}>
-                  <Button colorScheme='blue' onClick={handleNavigation}>
+                  <Button
+                    backgroundColor={accentColor}
+                    onClick={handleNavigation}
+                    _hover={{
+                      backgroundColor: 'var(--primary-hover)',
+                      transform: 'scale(1.01)',
+                    }}
+                  >
                     Jetzt anfragen
                   </Button>
-                  <Button variant='outline' colorScheme='blue'>
+                  <Button
+                    variant='outline'
+                    border={'1px solid var(--primary)'}
+                    color={accentColor}
+                    _hover={{
+                      border: '1px solid var(--primary-hover)',
+                      transform: 'scale(1.01)',
+                    }}
+                  >
                     Zur {card.title}
                   </Button>
                 </HStack>

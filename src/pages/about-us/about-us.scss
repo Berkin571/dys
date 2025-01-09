@@ -1,45 +1,11 @@
-.image-container {
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 0 !important;
-  margin-top: -4rem !important;
-
-  .full-width-image {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    clip-path: inset(22% 0 0 0);
-    object-fit: cover;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    .full-width-image {
-      max-height: 165px;
-    }
-  }
-}
-
 .about-us {
-  background-color: #f7fafc;
+  margin-top: var(--margin);
   color: #2d3748;
-
-  @media (prefers-color-scheme: dark) {
-    background-color: #1a202c;
-    color: #e2e8f0;
-  }
-
-  .chakra-heading {
-    margin-bottom: 1rem;
-  }
-
-  .chakra-text {
-    margin-bottom: 1rem;
-  }
+  padding: var(--padding);
+  margin-bottom: var(--margin-lg);
 
   .chakra-stack {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   .chakra-icon {
@@ -53,10 +19,5 @@
     p {
       margin-bottom: 0 !important;
     }
-  }
-
-  h2 {
-    border-left: 4px solid var(--primary);
-    padding-left: 0.5rem;
   }
 }
