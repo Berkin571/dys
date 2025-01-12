@@ -23,9 +23,5 @@
     border-left: 4px solid #0f3f6c;
     background-color: inherit;
     margin: 0.25rem 0 0;
-
-    @media (prefers-color-scheme: dark) {
-      border-left-color: #0f3f6c;
-    }
   }
 }

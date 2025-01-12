@@ -1,6 +1,16 @@
 .lectureCompanie {
-  margin-top: var(--margin);
   color: #2d3748;
   padding: var(--padding);
-  margin-bottom: var(--margin-lg);
+  margin-bottom: var(--margin);
+}
+
+.second-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  margin-bottom: calc(0.5 * var(--margin));
+}
+
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
 }

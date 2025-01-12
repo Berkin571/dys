@@ -19,7 +19,17 @@
     margin-right: 0.5rem;
   }
 
-  strong {
-    color: #319795;
+  .custom-input:focus {
+    border-color: var(--primary);
+  }
+
+  .custom-checkbox .chakra-checkbox__control[data-checked] {
+    background-color: var(--primary) !important;
+    box-shadow: 0 0 0 2px var(--primary) !important;
+    border-color: var(--primary) !important;
+  }
+
+  .custom-checkbox:last-child {
+    margin-left: var(--margin-lg);
   }
 }

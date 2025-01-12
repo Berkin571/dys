@@ -2,7 +2,6 @@ import {
   Box,
   HStack,
   Icon,
-  Divider,
   Accordion,
   AccordionItem,
   AccordionButton,
@@ -20,6 +19,7 @@ import {
 import { BsBank } from 'react-icons/bs';
 import { RiServiceFill } from 'react-icons/ri';
 import { TbFlagStar } from 'react-icons/tb';
+import { FaCreditCard } from 'react-icons/fa';
 import {
   FullWidthImage,
   ContainerComponent,
@@ -73,7 +73,7 @@ export function Process() {
               ist zum Zeitpunkt des Verkaufs voll eingezahlt.
             </AccordionPanel>
           </AccordionItem>
-          <Divider />
+
           <AccordionItem>
             <h2>
               <AccordionButton>
@@ -105,7 +105,7 @@ export function Process() {
               Entscheidung treffen.
             </AccordionPanel>
           </AccordionItem>
-          <Divider />
+
           <AccordionItem>
             <h2>
               <AccordionButton>
@@ -134,7 +134,35 @@ export function Process() {
               bestätigt.
             </AccordionPanel>
           </AccordionItem>
-          <Divider />
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box flex='1' textAlign='left'>
+                  <HStack>
+                    <Icon
+                      as={FaCreditCard}
+                      color={accentColor}
+                      boxSize={6}
+                      marginRight={1.5}
+                    />
+                    <Text as='span'>4. Kaufpreiszahlung</Text>
+                  </HStack>
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+              Innerhalb einer Woche nach Reservierung einer Vorratsgesellschaft
+              zahlen Sie den Kaufpreis entweder direkt an uns oder Sie
+              hinterlegen es alternativ auf einem Anderkonto eines in
+              Deutschland tätigen Rechtsanwalts. In vielen Fällen genügt es uns
+              zudem, wenn der Kaufpreis durch die Gutsagung eines deutschen
+              Rechtsanwalts oder Notars abgesichert wird. Das bedeutet, dass ein
+              deutscher Anwalt oder Notar für die Zahlung des Kaufpreises
+              mitverantwortlich zeichnet.
+            </AccordionPanel>
+          </AccordionItem>
+
           <AccordionItem>
             <h2>
               <AccordionButton>
@@ -146,7 +174,7 @@ export function Process() {
                       boxSize={6}
                       marginRight={1.5}
                     />
-                    <Text as='span'>4. Notartermin und Umschreibung</Text>
+                    <Text as='span'>5. Notartermin und Umschreibung</Text>
                   </HStack>
                 </Box>
                 <AccordionIcon />
@@ -161,7 +189,7 @@ export function Process() {
               werden.
             </AccordionPanel>
           </AccordionItem>
-          <Divider />
+
           <AccordionItem>
             <h2>
               <AccordionButton>
@@ -173,7 +201,7 @@ export function Process() {
                       boxSize={6}
                       marginRight={1.5}
                     />
-                    <Text as='span'>5. Handelsregistereintragung</Text>
+                    <Text as='span'>6. Handelsregistereintragung</Text>
                   </HStack>
                 </Box>
                 <AccordionIcon />
@@ -187,7 +215,7 @@ export function Process() {
               Eintragungsprozess.
             </AccordionPanel>
           </AccordionItem>
-          <Divider />
+
           <AccordionItem>
             <h2>
               <AccordionButton>
@@ -199,7 +227,7 @@ export function Process() {
                       boxSize={6}
                       marginRight={1.5}
                     />
-                    <Text as='span'>6. Geschäftsbeginn</Text>
+                    <Text as='span'>7. Geschäftsbeginn</Text>
                   </HStack>
                 </Box>
                 <AccordionIcon />
@@ -213,7 +241,7 @@ export function Process() {
               operativen Betrieb.
             </AccordionPanel>
           </AccordionItem>
-          <Divider />
+
           <AccordionItem>
             <h2>
               <AccordionButton>
@@ -226,7 +254,7 @@ export function Process() {
                       marginRight={1.5}
                     />
                     <Text as='span'>
-                      7. Unterstützung bei der Umschreibung des Bankkontos
+                      8. Unterstützung bei der Umschreibung des Bankkontos
                     </Text>
                   </HStack>
                 </Box>
@@ -255,7 +283,7 @@ export function Process() {
                       boxSize={6}
                       marginRight={1.5}
                     />
-                    <Text as='span'>8. Unser Service</Text>
+                    <Text as='span'>9. Unser Service</Text>
                   </HStack>
                 </Box>
                 <AccordionIcon />

@@ -9,4 +9,5 @@ export {
   ContainerComponent,
   FullWidthImage,
   TextComponent,
+  CardComponent,
 } from './ui';

@@ -17,7 +17,7 @@ export function FullWidthImage({
         src={src}
         alt={alt}
         width='100%'
-        height={{ base: '165px', md: '300px' }}
+        height={{ base: '165px', md: '200px' }}
         objectFit='cover'
         objectPosition={`center ${yOffset}`}
         display='block'

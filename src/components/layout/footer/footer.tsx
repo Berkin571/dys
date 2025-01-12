@@ -8,7 +8,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-import { FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 import './footer.scss';
 
@@ -34,9 +34,10 @@ export function Footer() {
         >
           <Link href='/about-us'>EKP Corporations</Link>
           <Link href='/vorratsgesellschaften'>Vorratsgesellschaften</Link>
-          <Link href='/ablauf'>Ablauf</Link>
+          <Link href='/kaufprozess'>Kaufprozess</Link>
           <Link href='/faq'>FAQ</Link>
           <Link href='/contact'>Kontakt</Link>
+          <Link href='/impressum'>Impressum</Link>
         </Stack>
       </Container>
 
@@ -59,17 +60,8 @@ export function Footer() {
             <IconButton
               as='a'
               href='#'
-              aria-label='Twitter'
-              icon={<FaTwitter />}
-              bg={accentColor}
-              color='white'
-              _hover={{ bg: 'var(--primary-hover)' }}
-            />
-            <IconButton
-              as='a'
-              href='#'
-              aria-label='Facebook'
-              icon={<FaFacebook />}
+              aria-label='LinkedIn'
+              icon={<FaLinkedin />}
               bg={accentColor}
               color='white'
               _hover={{ bg: 'var(--primary-hover)' }}

@@ -119,21 +119,23 @@ export function Contact() {
           melden.
         </TextComponent>
 
-        <Box as='form' onSubmit={handleSubmit}>
+        <Box as='form' onSubmit={handleSubmit} width={'100%'}>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4} mb={4}>
-            <Checkbox
-              name='interestUg'
-              isChecked={formData.interestUg}
-              onChange={handleChange}
-            >
-              Ich interessiere mich für eine UG
-            </Checkbox>
             <Checkbox
               name='interestGmbH'
               isChecked={formData.interestGmbH}
               onChange={handleChange}
+              className='custom-checkbox'
             >
-              Ich interessiere mich für eine GmbH
+              Ich interessiere mich für eine/mehrere GmbH
+            </Checkbox>
+            <Checkbox
+              name='interestUg'
+              isChecked={formData.interestUg}
+              onChange={handleChange}
+              className='custom-checkbox'
+            >
+              Ich interessiere mich für eine/mehrere UG (haftungsbeschränkt)
             </Checkbox>
           </Stack>
 
@@ -144,6 +146,7 @@ export function Contact() {
                 placeholder='Anrede auswählen'
                 value={formData.anrede}
                 onChange={handleChange}
+                className='custom-input'
               >
                 <option value='Frau'>Frau</option>
                 <option value='Herr'>Herr</option>
@@ -158,6 +161,7 @@ export function Contact() {
                 placeholder='Titel (optional)'
                 value={formData.titel}
                 onChange={handleChange}
+                className='custom-input'
               >
                 <option value='Dr.'>Dr.</option>
                 <option value='Prof.'>Prof.</option>
@@ -172,6 +176,7 @@ export function Contact() {
                 name='firstName'
                 value={formData.firstName}
                 onChange={handleChange}
+                className='custom-input'
               />
             </FormControl>
 
@@ -182,6 +187,7 @@ export function Contact() {
                 name='lastName'
                 value={formData.lastName}
                 onChange={handleChange}
+                className='custom-input'
               />
             </FormControl>
 
@@ -195,6 +201,7 @@ export function Contact() {
                 name='kanzleiFirma'
                 value={formData.kanzleiFirma}
                 onChange={handleChange}
+                className='custom-input'
               />
             </FormControl>
 
@@ -205,6 +212,7 @@ export function Contact() {
                 name='email'
                 value={formData.email}
                 onChange={handleChange}
+                className='custom-input'
                 required
               />
             </FormControl>
@@ -216,6 +224,7 @@ export function Contact() {
                 name='phone'
                 value={formData.phone}
                 onChange={handleChange}
+                className='custom-input'
               />
             </FormControl>
 
@@ -228,6 +237,7 @@ export function Contact() {
                 name='message'
                 value={formData.message}
                 onChange={handleChange}
+                className='custom-input'
                 required
               />
             </FormControl>
@@ -238,11 +248,14 @@ export function Contact() {
               name='consent'
               isChecked={formData.consent}
               onChange={handleChange}
+              className='custom-checkbox'
             >
               Ich stimme zu, dass meine Angaben und Daten zur Bearbeitung meiner
               Anfrage elektronisch erhoben und gespeichert werden. Sie können
               Ihre Einwilligung jederzeit für die Zukunft per E-Mail an{' '}
-              <span style={{ color: '#3075b6' }}>info@ekp-corporations.de</span>{' '}
+              <span style={{ color: 'var(--primary)' }}>
+                info@ekp-corporations.de
+              </span>{' '}
               widerrufen.
             </Checkbox>
             {!formData.consent && (
@@ -255,7 +268,13 @@ export function Contact() {
 
           <Button
             type='submit'
-            colorScheme='blue'
+            sx={{
+              backgroundColor: 'var(--primary)',
+              color: 'var(--primary-white)',
+              ':hover': {
+                backgroundColor: 'var(--primary-hover)',
+              },
+            }}
             w='full'
             mt={4}
             isDisabled={!formData.consent}

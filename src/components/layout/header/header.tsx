@@ -20,11 +20,22 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
 import './header.css';
 import logo from '../../../assets/image.png';
+import { AdditionalMenu } from './utils';
 
-const Links = [
+type LinkType = {
+  name: string;
+  url: string;
+  children?: ReactNode;
+};
+
+const Links: LinkType[] = [
   { name: 'Über EKP Corporations', url: '/about-us' },
-  { name: 'Vorratsgesellschaften', url: '/vorratsgesellschaften' },
-  { name: 'Ablauf', url: '/ablauf' },
+  {
+    name: 'Vorratsgesellschaften',
+    url: '/vorratsgesellschaften',
+    children: <AdditionalMenu />,
+  },
+  { name: 'Kaufprozess', url: '/kaufprozess' },
   { name: 'FAQ', url: '/faq' },
   { name: 'Kontakt', url: '/contact' },
 ];
@@ -32,22 +43,53 @@ const Links = [
 type NavLinkType = {
   children: ReactNode;
   url: string;
+  isDropdown?: boolean;
+  dropdownContent?: ReactNode;
 };
 
-const NavLink = ({ children, url }: NavLinkType) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: 'gray.200',
-    }}
-    href={url}
-  >
-    {children}
-  </Link>
-);
+const NavLink = ({
+  children,
+  url,
+  isDropdown,
+  dropdownContent,
+}: NavLinkType) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <Box
+      position='relative'
+      onMouseEnter={() => isDropdown && setIsHovered(true)}
+      onMouseLeave={() => isDropdown && setIsHovered(false)}
+    >
+      <Link
+        px={2}
+        py={1}
+        rounded='md'
+        _hover={{
+          textDecoration: 'none',
+          bg: 'gray.200',
+        }}
+        href={url}
+      >
+        {children}
+      </Link>
+      {isDropdown && isHovered && (
+        <Box
+          position='absolute'
+          top='100%'
+          left={0}
+          bg='white'
+          boxShadow='md'
+          p={4}
+          rounded='md'
+          zIndex={10}
+        >
+          {dropdownContent}
+        </Box>
+      )}
+    </Box>
+  );
+};
 
 export function Header() {
   const navigate = useNavigate();
@@ -90,16 +132,16 @@ export function Header() {
         zIndex={1}
         boxShadow={scroll ? 'sm' : 'none'}
       >
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+        <Flex h={16} alignItems='center' justifyContent='space-between'>
           <IconButton
-            size={'md'}
+            size='md'
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
+            aria-label='Open Menu'
             display={{ md: 'none' }}
-            backgroundColor={'var(--primary)'}
+            backgroundColor='var(--primary)'
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={'center'}>
+          <HStack spacing={8} alignItems='center'>
             <Box
               display={{ base: 'none', md: 'block' }}
               onClick={handleLogoClick}
@@ -111,30 +153,31 @@ export function Header() {
                 className='ekpCorporationsLogo'
               />
             </Box>
-            <HStack
-              as={'nav'}
-              spacing={4}
-              display={{ base: 'none', md: 'flex' }}
-            >
+            <HStack as='nav' spacing={4} display={{ base: 'none', md: 'flex' }}>
               {Links.map(link => (
-                <NavLink key={link.name} url={link.url}>
+                <NavLink
+                  key={link.name}
+                  url={link.url}
+                  isDropdown={link.name === 'Vorratsgesellschaften'}
+                  dropdownContent={link.children}
+                >
                   {link.name}
                 </NavLink>
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={'center'}>
+          <Flex alignItems='center'>
             <Button
               as={Link}
               href='#'
-              bg={'var(--primary)'}
-              color={'var(--primary-white)'}
+              bg='var(--primary)'
+              color='var(--primary-white)'
               _hover={{
                 bg: 'var(--primary-hover)',
               }}
               onClick={handleNavigation}
             >
-              Vorratsgesellschaft anfragen
+              Vorratsgesellschaft reservieren
             </Button>
           </Flex>
         </Flex>
@@ -154,7 +197,7 @@ export function Header() {
             </DrawerHeader>
             <DrawerCloseButton sx={{ marginTop: 2, marginRight: 2 }} />
             <DrawerBody>
-              <Stack as={'nav'} spacing={4}>
+              <Stack as='nav' spacing={4}>
                 {Links.map(link => (
                   <NavLink key={link.name} url={link.url}>
                     {link.name}

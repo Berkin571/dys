@@ -1,8 +1,9 @@
 :root {
-  --primary: #0d298d;
-  --primary-hover: rgba(13, 41, 141, 0.89);
+  --primary: #283c84;
+  --primary-hover: #0d298de3;
   --primary-white: #ffffff;
   --bg-layer: #f7fafc;
+  --icon-check: #16c47f;
 
   --margin: 1rem;
   --margin-lg: 2rem;

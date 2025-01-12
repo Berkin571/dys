@@ -132,6 +132,7 @@ export function CardCarousel({ cards }: CardCarouselProps) {
                     variant='outline'
                     border={'1px solid var(--primary)'}
                     color={accentColor}
+                    onClick={() => navigate(`/${card.title}`)}
                     _hover={{
                       border: '1px solid var(--primary-hover)',
                       transform: 'scale(1.01)',

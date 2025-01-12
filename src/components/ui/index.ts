@@ -4,3 +4,5 @@ export { Title } from './title';
 export { ContainerComponent } from './container';
 export { FullWidthImage } from './full-width-image';
 export { TextComponent } from './text';
+export { CardComponent } from './card';
+export { Dropdown } from './dropdown';

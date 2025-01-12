@@ -8,7 +8,7 @@ type TitleProps = {
 
 export function Title({ label, className }: TitleProps) {
   return (
-    <Heading as='h2' size='xl' mb={6} className={`heading-h2 ${className}`}>
+    <Heading as='h2' size={'xl'} mb={6} className={`heading-h2 ${className}`}>
       {label}
     </Heading>
   );
