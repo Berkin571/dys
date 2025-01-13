@@ -13,6 +13,7 @@ import {
   Center,
   Button,
   Divider,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -31,14 +32,49 @@ export function CardCarousel({ cards }: CardCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  const [isMobile] = useMediaQuery('(max-width: 768px)');
+
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(null); // Reset touchEnd
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const touchDifference = touchStart - touchEnd;
+
+    if (touchDifference > 50) {
+      const newIndex = Math.min(currentIndex + 1, cards.length - 1);
+      handleDotClick(newIndex);
+    }
+
+    if (touchDifference < -50) {
+      const newIndex = Math.max(currentIndex - 1, 0);
+      handleDotClick(newIndex);
+    }
+  };
 
   const handleDotClick = (index: number) => {
     setCurrentIndex(index);
     const scrollWidth = scrollRef.current?.scrollWidth || 0;
     const cardWidth = scrollWidth / cards.length;
+
     if (scrollRef.current) {
       scrollRef.current.scrollTo({
-        left: cardWidth * index,
+        left:
+          index === 0
+            ? 0
+            : index === cards.length - 1
+              ? scrollWidth
+              : cardWidth * index,
         behavior: 'smooth',
       });
     }
@@ -90,6 +126,9 @@ export function CardCarousel({ cards }: CardCarouselProps) {
             '-ms-overflow-style': 'none',
             'scrollbar-width': 'none',
           }}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {cards.map((card, index) => (
             <Card
@@ -98,8 +137,9 @@ export function CardCarousel({ cards }: CardCarouselProps) {
               borderColor={accentColor}
               borderRadius='md'
               boxShadow='md'
-              flex={{ base: '0 0 80%', md: '1' }}
-              maxWidth={{ base: '80%', md: '100%' }}
+              flex={isMobile ? '0 0 100%' : '1'}
+              maxWidth={isMobile ? '100%' : 'none'}
+              width={isMobile ? '100%' : 'auto'}
               as={motion.div}
               whileHover={{ boxShadow: '0px 5px 7px rgba(0, 0, 0, 0.2)' }}
               initial={{ scale: 0.9 }}
@@ -117,34 +157,64 @@ export function CardCarousel({ cards }: CardCarouselProps) {
                 <Text>{card.description}</Text>
               </CardBody>
               <CardFooter>
-                <HStack spacing={4}>
-                  <Button
-                    backgroundColor={accentColor}
-                    onClick={handleNavigation}
-                    _hover={{
-                      backgroundColor: 'var(--primary-hover)',
-                      transform: 'scale(1.01)',
-                    }}
-                  >
-                    Jetzt anfragen
-                  </Button>
-                  <Button
-                    variant='outline'
-                    border={'1px solid var(--primary)'}
-                    color={accentColor}
-                    onClick={() => navigate(`/${card.title}`)}
-                    _hover={{
-                      border: '1px solid var(--primary-hover)',
-                      transform: 'scale(1.01)',
-                    }}
-                  >
-                    Zur {card.title}
-                  </Button>
-                </HStack>
+                {isMobile ? (
+                  <VStack spacing={4} width='100%'>
+                    <Button
+                      width='100%'
+                      backgroundColor={accentColor}
+                      onClick={handleNavigation}
+                      _hover={{
+                        backgroundColor: 'var(--primary-hover)',
+                        transform: 'scale(1.01)',
+                      }}
+                    >
+                      Jetzt anfragen
+                    </Button>
+                    <Button
+                      width='100%'
+                      variant='outline'
+                      border='1px solid var(--primary)'
+                      color={accentColor}
+                      onClick={() => navigate(`/${card.title}`)}
+                      _hover={{
+                        border: '1px solid var(--primary-hover)',
+                        transform: 'scale(1.01)',
+                      }}
+                    >
+                      Zur {card.title}
+                    </Button>
+                  </VStack>
+                ) : (
+                  <HStack spacing={4}>
+                    <Button
+                      backgroundColor={accentColor}
+                      onClick={handleNavigation}
+                      _hover={{
+                        backgroundColor: 'var(--primary-hover)',
+                        transform: 'scale(1.01)',
+                      }}
+                    >
+                      Jetzt anfragen
+                    </Button>
+                    <Button
+                      variant='outline'
+                      border='1px solid var(--primary)'
+                      color={accentColor}
+                      onClick={() => navigate(`/${card.title}`)}
+                      _hover={{
+                        border: '1px solid var(--primary-hover)',
+                        transform: 'scale(1.01)',
+                      }}
+                    >
+                      Zur {card.title}
+                    </Button>
+                  </HStack>
+                )}
               </CardFooter>
             </Card>
           ))}
         </Box>
+
         <Center mt={4} display={{ base: 'flex', md: 'none' }}>
           <HStack spacing={2}>
             {cards.map((_, index) => (

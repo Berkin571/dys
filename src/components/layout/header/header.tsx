@@ -80,9 +80,10 @@ const NavLink = ({
           left={0}
           bg='white'
           boxShadow='md'
-          p={4}
+          p={2}
           rounded='md'
           zIndex={10}
+          mt={0.5}
         >
           {dropdownContent}
         </Box>
@@ -199,9 +200,46 @@ export function Header() {
             <DrawerBody>
               <Stack as='nav' spacing={4}>
                 {Links.map(link => (
-                  <NavLink key={link.name} url={link.url}>
-                    {link.name}
-                  </NavLink>
+                  <Box key={link.name}>
+                    <NavLink url={link.url}>{link.name}</NavLink>
+                    {isMobile && link.name === 'Vorratsgesellschaften' && (
+                      <Stack pl={3} spacing={1}>
+                        <Link
+                          href='/ug'
+                          px={2}
+                          py={1}
+                          mt={4}
+                          rounded='md'
+                          _hover={{
+                            bg: 'gray.200',
+                          }}
+                          _before={{
+                            content: '"•"',
+                            marginRight: '8px',
+                            color: 'black',
+                          }}
+                        >
+                          UG (haftungsbeschränkt)
+                        </Link>
+                        <Link
+                          href='/gmbh'
+                          px={2}
+                          py={1}
+                          rounded='md'
+                          _hover={{
+                            bg: 'gray.200',
+                          }}
+                          _before={{
+                            content: '"•"',
+                            marginRight: '8px',
+                            color: 'black',
+                          }}
+                        >
+                          GmbH
+                        </Link>
+                      </Stack>
+                    )}
+                  </Box>
                 ))}
               </Stack>
             </DrawerBody>

@@ -50,6 +50,8 @@ export function Contact() {
     consent: false,
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
@@ -70,19 +72,20 @@ export function Contact() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    setIsSubmitting(true);
+
     const templateParams = {
-      anrede: formData.anrede,
-      titel: formData.titel,
+      anrede: formData.anrede || 'Nicht angegeben',
+      titel: formData.titel || 'Kein Titel',
       firstName: formData.firstName,
       lastName: formData.lastName,
-      kanzleiFirma: formData.kanzleiFirma,
+      kanzleiFirma: formData.kanzleiFirma || 'Nicht angegeben',
       email: formData.email,
-      phone: formData.phone,
+      telefon: formData.phone || 'Nicht angegeben',
       message: formData.message,
-      interestUg: formData.interestUg ? 'UG' : 'Nein',
-      interestGmbH: formData.interestGmbH ? 'GmbH' : 'Nein',
-      consent: formData.consent ? 'Zugestimmt' : 'Nicht zugestimmt',
-      reply_to: formData.email,
+      interesseUg: formData.interestUg ? 'Ja' : 'Nein',
+      interesseGmbH: formData.interestGmbH ? 'Ja' : 'Nein',
+      einwilligung: formData.consent ? 'Zugestimmt' : 'Nicht zugestimmt',
     };
 
     emailjs
@@ -96,14 +99,28 @@ export function Contact() {
         response => {
           console.log('SUCCESS!', response.status, response.text);
           alert('E-Mail erfolgreich versendet!');
+          setFormData({
+            anrede: '',
+            titel: '',
+            firstName: '',
+            lastName: '',
+            kanzleiFirma: '',
+            email: '',
+            phone: '',
+            message: '',
+            interestUg: false,
+            interestGmbH: false,
+            consent: false,
+          });
         },
         err => {
           console.error('FAILED...', err);
           alert('Fehler beim Versenden der E-Mail.');
         },
-      );
-
-    console.log(formData, '###');
+      )
+      .finally(() => {
+        setTimeout(() => setIsSubmitting(false), 3000);
+      });
   };
 
   return (
@@ -154,7 +171,6 @@ export function Contact() {
                 <option value='Firma'>Firma</option>
               </Select>
             </FormControl>
-
             <FormControl id='titel'>
               <Select
                 name='titel'
@@ -168,7 +184,6 @@ export function Contact() {
                 <option value='Prof. Dr.'>Prof. Dr.</option>
               </Select>
             </FormControl>
-
             <FormControl id='firstName'>
               <Input
                 placeholder='Vorname'
@@ -179,7 +194,6 @@ export function Contact() {
                 className='custom-input'
               />
             </FormControl>
-
             <FormControl id='lastName'>
               <Input
                 placeholder='Nachname'
@@ -190,7 +204,6 @@ export function Contact() {
                 className='custom-input'
               />
             </FormControl>
-
             <FormControl
               id='kanzleiFirma'
               gridColumn={{ base: 'span 1', md: 'span 2' }}
@@ -204,7 +217,6 @@ export function Contact() {
                 className='custom-input'
               />
             </FormControl>
-
             <FormControl id='email'>
               <Input
                 placeholder='E-Mail Adresse*'
@@ -216,7 +228,6 @@ export function Contact() {
                 required
               />
             </FormControl>
-
             <FormControl id='phone'>
               <Input
                 placeholder='Telefonnummer (optional)'
@@ -227,7 +238,6 @@ export function Contact() {
                 className='custom-input'
               />
             </FormControl>
-
             <FormControl
               id='message'
               gridColumn={{ base: 'span 1', md: 'span 2' }}
@@ -251,17 +261,11 @@ export function Contact() {
               className='custom-checkbox'
             >
               Ich stimme zu, dass meine Angaben und Daten zur Bearbeitung meiner
-              Anfrage elektronisch erhoben und gespeichert werden. Sie können
-              Ihre Einwilligung jederzeit für die Zukunft per E-Mail an{' '}
-              <span style={{ color: 'var(--primary)' }}>
-                info@ekp-corporations.de
-              </span>{' '}
-              widerrufen.
+              Anfrage elektronisch erhoben und gespeichert werden.
             </Checkbox>
             {!formData.consent && (
               <FormHelperText color='red.500'>
-                Bitte bestätigen Sie die Einwilligung zur Datenverarbeitung,
-                bevor Sie absenden.
+                Bitte bestätigen Sie die Einwilligung zur Datenverarbeitung.
               </FormHelperText>
             )}
           </FormControl>
@@ -271,13 +275,11 @@ export function Contact() {
             sx={{
               backgroundColor: 'var(--primary)',
               color: 'var(--primary-white)',
-              ':hover': {
-                backgroundColor: 'var(--primary-hover)',
-              },
+              ':hover': { backgroundColor: 'var(--primary-hover)' },
             }}
             w='full'
             mt={4}
-            isDisabled={!formData.consent}
+            isDisabled={!formData.consent || isSubmitting}
           >
             Absenden
           </Button>

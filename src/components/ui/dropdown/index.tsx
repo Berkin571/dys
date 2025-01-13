@@ -5,14 +5,13 @@ export function Dropdown() {
   const navigate = useNavigate();
 
   return (
-    // TODO: weite anpassen
     <Menu>
       <MenuItem
         onClick={() => navigate('/gmbh')}
         borderRadius='5px'
-        px={1}
-        py={0.5}
-        mb={3}
+        px={4}
+        py={2}
+        whiteSpace='nowrap'
         _hover={{
           bg: 'gray.200',
         }}
@@ -22,8 +21,9 @@ export function Dropdown() {
       <MenuItem
         onClick={() => navigate('/ug')}
         borderRadius='5px'
-        px={1}
-        py={0.5}
+        px={4}
+        py={2}
+        whiteSpace='nowrap'
         _hover={{
           bg: 'gray.200',
         }}

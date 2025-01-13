@@ -29,7 +29,9 @@
     border-color: var(--primary) !important;
   }
 
-  .custom-checkbox:last-child {
-    margin-left: var(--margin-lg);
+  @media (min-width: 768px) {
+    .custom-checkbox:last-child {
+      margin-left: var(--margin-lg);
+    }
   }
 }
