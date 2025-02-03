@@ -36,7 +36,7 @@ export function UG() {
         yOffset='50%'
       />
       <ContainerComponent>
-        <Title label='UG (haftungsbeschränkt)' />
+        <Title label='UG (haftungsbeschränkt)' size={isMobile ? 'lg' : 'xl'} />
         <TextComponent>
           Die Unternehmergesellschaft (haftungsbeschränkt), kurz UG
           (haftungsbeschränkt), ist eine Sonderform der GmbH und in Deutschland
@@ -188,7 +188,7 @@ export function UG() {
           marginTop={'1.5rem'}
         >
           <Button
-            width={isMobile ? '75%' : '450px'}
+            width={isMobile ? '85%' : '450px'}
             backgroundColor={accentColor}
             onClick={handleNavigation}
             _hover={{
