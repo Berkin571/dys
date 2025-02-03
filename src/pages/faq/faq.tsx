@@ -27,12 +27,44 @@ export function FAQ() {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
-              Eine Vorratsgesellschaft ist eine vorgegründete, aber bisher nicht
-              operative Gesellschaft, die dazu dient, den Gründungsprozess zu
-              verkürzen und Ihnen eine schnelle Handlungsfähigkeit zu
-              ermöglichen.
+              Eine Vorratsgesellschaft ist eine vollständig gegründete und in
+              das Handelsregister eingetragene Gesellschaft, die bisher operativ
+              nicht tätig gewesen ist. Eine Vorratsgesellschaft kann vom
+              Erwerber sofort übernommen werden und ermöglicht eine sofortige
+              Handlungsfähigkeit unter Ausschluss der persönlichen Haftung.
             </AccordionPanel>
           </AccordionItem>
+
+          <AccordionItem>
+            <AccordionButton>
+              <Text flex='1' textAlign='left'>
+                Was sind die Vorteile des Erwerbs einer Vorratsgesellschaft?
+              </Text>
+              <AccordionIcon />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              Ein entscheidender Vorteil des Erwerbs einer Vorratsgesellschaft
+              ist die sofortige Handlungsfähigkeit. Die eigenständige Gründung
+              einer GmbH oder UG kann bis zu 6 Wochen dauern. Wenn es aber
+              schnell gehen muss, beispielsweise aufgrund eines Immobilienkaufs,
+              einer M&A-Transaktion oder wenn Sie kurzfristig Verträge
+              abschließen möchten, kann die Gründungsdauer von bis zu 6 Wochen
+              zu lang sein und sich unvorteilhaft auf Ihr Vorhaben auswirken.
+              Für diese Fälle kann der Erwerb einer Vorratsgesellschaft die
+              Lösung sein. <br />
+              <br />
+              Ein weiterer essenzieller Vorteil, ist die sofortige
+              Haftungsbeschränkung bei Erwerb einer Vorratsgesellschaft. Wenn
+              Sie nämlich eine GmbH oder UG eigenständig gründen möchten,
+              entsteht nach der notariellen Beurkundung bis zum Zeitpunkt der
+              Handelsregistereintragung eine „GmbH in Gründung“/“GmbH i.Gr.“
+              bzw. „UG in Gründung“/“UG i.Gr.“. Beim Erwerb einer
+              Vorratsgesellschaft erwerben Sie eine fertig gegründete
+              Gesellschaft ohne dem Zusatz „in Gründung“/“i.Gr.“ und genießen ab
+              der Übernahme eine persönliche Haftungsbeschränkung.
+            </AccordionPanel>
+          </AccordionItem>
+
           <AccordionItem>
             <AccordionButton>
               <Text flex='1' textAlign='left'>
@@ -41,10 +73,33 @@ export function FAQ() {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
-              Wir haben uns auf die Gründung und Vertrieb von UGs und GmbHs
+              Wir haben uns auf die Gründung und Vertrieb von GmbHs und UGs
               spezialisiert.
             </AccordionPanel>
           </AccordionItem>
+
+          <AccordionItem>
+            <AccordionButton>
+              <Text flex='1' textAlign='left'>
+                Was beinhaltet der Kaufpreis für eine Vorratsgesellschaft?
+              </Text>
+              <AccordionIcon />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              Der Kaufpreis beinhaltet alle bereits angefallenen
+              Gründungskosten, wie Notar- und Gerichtskosten. Zudem ist das
+              satzungsmäßige Stammkapital im Kaufpreis enthalten, das auf dem
+              Bankkonto der Gesellschaft voll eingezahlt ist und vom Käufer mit
+              übernommen wird. Von unserer Seite fallen zusätzlichen zum
+              Kaufpreis keine weiteren Kosten an.
+              <br />
+              <br /> Für die notarielle Beurkundung des Erwerbs der
+              Vorratsgesellschaft sowie für die Handelsregistereintragung fallen
+              zusätzlich Notar- und Gerichtskosten an, die vom Käufer direkt an
+              den Notar bzw. dem Amtsgericht zu zahlen sind.
+            </AccordionPanel>
+          </AccordionItem>
+
           <AccordionItem>
             <AccordionButton>
               <Text flex='1' textAlign='left'>
@@ -54,9 +109,11 @@ export function FAQ() {
             </AccordionButton>
             <AccordionPanel pb={4}>
               Ja, alle unsere Vorratsgesellschaften sind frei von
-              Verbindlichkeiten und haben keine Geschäftstätigkeit aufgenommen.
+              Verbindlichkeiten und Lasten und haben vorher keine
+              Geschäftstätigkeit aufgenommen.
             </AccordionPanel>
           </AccordionItem>
+
           <AccordionItem>
             <AccordionButton>
               <Text flex='1' textAlign='left'>
@@ -79,6 +136,7 @@ export function FAQ() {
               vollzogen werden kann.
             </AccordionPanel>
           </AccordionItem>
+
           <AccordionItem>
             <AccordionButton>
               <Text flex='1' textAlign='left'>
@@ -97,6 +155,7 @@ export function FAQ() {
               darauf an.
             </AccordionPanel>
           </AccordionItem>
+
           <AccordionItem>
             <AccordionButton>
               <Text flex='1' textAlign='left'>
@@ -115,6 +174,7 @@ export function FAQ() {
               Informationen und Nachweise zu Ihrem Aufenthaltsstatus.
             </AccordionPanel>
           </AccordionItem>
+
           <AccordionItem>
             <AccordionButton>
               <Text flex='1' textAlign='left'>
@@ -127,6 +187,7 @@ export function FAQ() {
               für alle Fragen und Unterstützung zur Verfügung.
             </AccordionPanel>
           </AccordionItem>
+
           <AccordionItem>
             <AccordionButton>
               <Text flex='1' textAlign='left'>

@@ -205,7 +205,7 @@ export function Header() {
                     {isMobile && link.name === 'Vorratsgesellschaften' && (
                       <Stack pl={3} spacing={1}>
                         <Link
-                          href='/ug'
+                          href='/vorratsgesellschaften'
                           px={2}
                           py={1}
                           mt={4}
@@ -219,7 +219,7 @@ export function Header() {
                             color: 'black',
                           }}
                         >
-                          UG (haftungsbeschränkt)
+                          Unsere Leistungsversprechen
                         </Link>
                         <Link
                           href='/gmbh'
@@ -236,6 +236,22 @@ export function Header() {
                           }}
                         >
                           GmbH
+                        </Link>
+                        <Link
+                          href='/ug'
+                          px={2}
+                          py={1}
+                          rounded='md'
+                          _hover={{
+                            bg: 'gray.200',
+                          }}
+                          _before={{
+                            content: '"•"',
+                            marginRight: '8px',
+                            color: 'black',
+                          }}
+                        >
+                          UG (haftungsbeschränkt)
                         </Link>
                       </Stack>
                     )}

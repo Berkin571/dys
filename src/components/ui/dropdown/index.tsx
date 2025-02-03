@@ -7,6 +7,18 @@ export function Dropdown() {
   return (
     <Menu>
       <MenuItem
+        onClick={() => navigate('/vorratsgesellschaften')}
+        borderRadius='5px'
+        px={4}
+        py={2}
+        whiteSpace='nowrap'
+        _hover={{
+          bg: 'gray.200',
+        }}
+      >
+        Unsere Leistungsversprechen
+      </MenuItem>
+      <MenuItem
         onClick={() => navigate('/gmbh')}
         borderRadius='5px'
         px={4}

@@ -29,7 +29,7 @@ export function AboutUs() {
         <VStack spacing={8} align='stretch'>
           <Box>
             <Heading as='h2' size='lg' mb={4} color={accentColor}>
-              EKP Corporations
+              Unsere Priorität: Ihre Zufriedenheit
             </Heading>
             <TextComponent mb={2}>
               Bei EKP Corporations steht Kundenzufriedenheit an erster Stelle.

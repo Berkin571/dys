@@ -26,7 +26,7 @@ export function LectureCompanies() {
   const cardData = [
     {
       title: 'GmbH',
-      price: 'Kaufpreis <strong>27.900 Euro</strong>',
+      price: 'Kaufpreis <strong>28.500 Euro</strong>',
       description: 'inkl. 25.000 Euro eingezahltes Kapital',
     },
     {
@@ -144,8 +144,7 @@ export function LectureCompanies() {
                   </h2>
                   <AccordionPanel pb={4}>
                     <Text fontSize='md' lineHeight='tall'>
-                      Ein zweiter Vorteil, der ebenfalls außerordentlich wichtig
-                      sein kann, ist die{' '}
+                      Ein weiterer essenzieller Vorteil ist die{' '}
                       <strong>sofortige Haftungsbeschränkung</strong> bei Erwerb
                       einer Vorratsgesellschaft. Wenn Sie nämlich eine GmbH oder
                       UG eigenständig gründen möchten, entsteht nach der
