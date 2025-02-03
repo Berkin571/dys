@@ -188,7 +188,7 @@ export function UG() {
           marginTop={'1.5rem'}
         >
           <Button
-            width={isMobile ? '90%' : '450px'}
+            width={isMobile ? '93%' : '450px'}
             backgroundColor={accentColor}
             onClick={handleNavigation}
             _hover={{
